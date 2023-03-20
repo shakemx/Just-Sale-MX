@@ -1,0 +1,127 @@
+// ------------------------------------------------------------
+// Patrones de CSS
+// ------------------------------------------------------------
+
+$primario: #917236;
+$secundario: #344558;
+$acento: #ae8b4b;
+$texto_1: #fcfcfc;
+$texto_2: #dbb76d;
+$shake: #6918b4;
+$success: #03A258;
+$danger: #D92F55;
+$info: #006FE0;
+
+@font-face {
+  font-family: "ArticulatCF Bold", "sans-serif";
+  src: local("ArticulatCF Bold"),
+  url("../fonts/ArticulatCF-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArticulatCF Normal", "sans-serif";
+  src: local("ArticulatCF Normal"),
+    url("../fonts/ArticulatCF-Normal.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand", "sans-serif";
+  src: local("Quicksand"),
+    url("../fonts/uicksand-Regular.ttf") format("truetype");
+}
+//------------------------------------------------------
+// ESTILOS BODY
+//------------------------------------------------------
+
+body {
+  background-color: $primario;
+  font-family:  "ArticulatCF Normal", "sans-serif";
+}
+
+section,
+header {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
+//------------------------------------------------------
+// Sección Top Scroll
+//------------------------------------------------------
+
+#topscroll {
+  display: inline-block;
+  background-color: $secundario;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 15px;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#topscroll::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 50px;
+  color: $texto_1;
+}
+#topscroll:hover {
+  cursor: pointer;
+  background-color: rgba($color: $secundario, $alpha: 0.6);
+}
+#topscroll:active {
+  background-color: rgba($color: $secundario, $alpha: 0.8);
+}
+#topscroll.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 540px) {
+  #topscroll {
+    width: 24px;
+    height: 24px;
+    border-radius: 9px;
+  }
+  #topscroll::after {
+    font-size: 0.9em;
+    line-height: 30px;
+  }
+}
+
+//---------------------------------------
+// Sección 1 Hero
+//---------------------------------------
+.hero-desktop {
+  height: 100vh;
+  background-image: url("../img/home/prox_desktop.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: initial;
+}
+
+.hero-mobile {
+  height: 100vh;
+  background-image: url("../img/home/prox_mobile.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: initial;
+}

@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "ArticulatCF Bold", "sans-serif";
+  src: local("ArticulatCF Bold"), url("../fonts/ArticulatCF-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "ArticulatCF Normal", "sans-serif";
+  src: local("ArticulatCF Normal"), url("../fonts/ArticulatCF-Normal.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand", "sans-serif";
+  src: local("Quicksand"), url("../fonts/uicksand-Regular.ttf") format("truetype"); }
+body {
+  background-color: #917236;
+  font-family: "ArticulatCF Normal", "sans-serif"; }
+
+section,
+header {
+  overflow: hidden; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+#topscroll {
+  display: inline-block;
+  background-color: #344558;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 15px;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  -webkit-transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000; }
+
+#topscroll::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 50px;
+  color: #fcfcfc; }
+
+#topscroll:hover {
+  cursor: pointer;
+  background-color: rgba(52, 69, 88, 0.6); }
+
+#topscroll:active {
+  background-color: rgba(52, 69, 88, 0.8); }
+
+#topscroll.show {
+  opacity: 1;
+  visibility: visible; }
+
+@media only screen and (max-width: 540px) {
+  #topscroll {
+    width: 24px;
+    height: 24px;
+    border-radius: 9px; }
+
+  #topscroll::after {
+    font-size: 0.9em;
+    line-height: 30px; } }
+.hero-desktop {
+  height: 100vh;
+  background-image: url("../img/home/prox_desktop.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: initial; }
+
+.hero-mobile {
+  height: 100vh;
+  background-image: url("../img/home/prox_mobile.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: initial; }
+
+/*# sourceMappingURL=estilos.css.map */
