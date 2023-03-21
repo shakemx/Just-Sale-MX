@@ -1,0 +1,35 @@
+{% load static %}
+
+<nav class="navbar fixed-top navbar-light bg-transparent p-0">
+    <div class="container" tabindex="999999">
+      <a class="navbar-brand" href="#" >
+        <img src="{% static 'img/logo_light.png' %}" alt="Logo Just Sale" height="60" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#listaNav"
+        aria-controls="listaNav"
+        aria-expanded="false"
+        aria-label="Mostrar Menú Navegación"
+        onclick="navbarMotion(); return false;"
+      >
+        <span class="navbar-toggler-icon menuShow" id="menuToogle"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse fixed-bottom showNav  mt-3 " id="listaNav" >
+      <ul class="navbar-nav container" data-bs-dismiss="collapse">
+        <li class="nav-item">
+          <a class="nav-link" href="#nosotros">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#servicios">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <script src="{% static 'js/custom.js' %}"></script>

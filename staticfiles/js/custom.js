@@ -13,24 +13,15 @@ btn.on("click", function (e) {
   $("html, body").animate({ scrollTop: 0 }, "300");
 });
 
-function showCartelera() {
-  var ocultar = document.getElementById("ocultar");
-  var element = document.getElementById("mostrar");
-  var visualizar = document.getElementById("visualizar");
+function navbarMotion() {
+  var element = $("#listaNav");
+  var toogle = $("#menuToogle");
 
-  element.classList.add("hero-cartelera-show");
-  ocultar.classList.add("hide");
-  visualizar.classList.remove("hide");
-}
+    element.toggleClass("hideNav");
+    element.toggleClass("showNav");
+    toogle.toggleClass("menuShow");
+    toogle.toggleClass("menuHide");
 
-function showCarteleralg() {
-  var ocultar = document.getElementById("ocultarlg");
-  var element = document.getElementById("mostrar");
-  var visualizar = document.getElementById("visualizarlg");
-
-  element.classList.add("hero-cartelera-show");
-  ocultar.classList.add("hide");
-  visualizar.classList.remove("hide");
 }
 
 var buton = $("#downarrow");

@@ -2,8 +2,8 @@
 // Patrones de CSS
 // ------------------------------------------------------------
 
-$primario: #917236;
-$secundario: #344558;
+$primario: #344558;;
+$secundario: #917236;
 $acento: #ae8b4b;
 $texto_1: #fcfcfc;
 $texto_2: #dbb76d;
@@ -52,6 +52,136 @@ ul {
 }
 
 
+//------------------------------------------------------
+// Sección Top Scroll
+//------------------------------------------------------
+
+.nav-link{
+  font-size: xx-large;
+  color: $texto_1!important;
+  margin-left: 3rem;
+}
+
+.menuShow {
+  border-color: transparent !important;
+  border: none !important;
+  background-image: url("../img/open.png")!important;
+  -webkit-animation: menu-show .5s ease 0s 1 !important;
+  animation: menu-show .5s ease 0s 1  !important;
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes menu-show {
+  to {
+    background-image: url("../img/open.png")!important;
+    opacity:1;
+  } 
+  from {
+    background-image: url("../img/close.png")!important;
+    opacity:0;
+  }
+}
+@-webkit-keyframes menu-show {
+  to {
+    background-image: url("../img/open.png")!important;
+    opacity:1;
+  }
+  from {
+    background-image: url("../img/close.png")!important;
+    opacity:0;
+  }
+}
+
+.menuHide {
+  border-color: transparent !important;
+  border: none !important;
+  background-image: url("../img/close.png")!important;
+  -webkit-animation: menu-hide .5s ease 0s 1 !important;
+  animation: menu-hide .5s ease 0s 1  !important;
+  animation-fill-mode: forwards !important;
+}
+
+
+
+@keyframes menu-hide {
+  to {
+    background-image: url("../img/close.png")!important;
+    opacity:1;
+  } 
+  from {
+    background-image: url("../img/open.png")!important;
+    opacity:0;
+  }
+}
+@-webkit-keyframes menu-hide {
+  to {
+    background-image: url("../img/close.png")!important;
+    opacity:1;
+  }
+  from {
+    background-image: url("../img/open.png")!important;
+    opacity:0;
+  }
+}
+
+.navbar-light .navbar-toggler {
+  color: transparent !important;
+  border-color: transparent !important;
+  border: none !important;
+  z-index: 9999;
+}
+
+.navbar-toggler:focus {
+  border-color: transparent !important;
+  border: none !important;
+  box-shadow: transparent !important;
+}
+
+.showNav{
+  -webkit-animation: collapser-show .5s ease-in-out 0s 1 ;
+  animation: collapser-show .5s ease-in-out 0s 1  ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes collapser-show {
+  to {
+    height: 0%;
+  } 
+  from {
+    height: 85%;
+  }
+}
+@-webkit-keyframes collapser-show {
+  to {
+    height: 0%;
+  }
+  from {
+    height: 85%;
+  }
+}
+
+.hideNav{
+  -webkit-animation: collapser-hide .5s ease 0s 1 normal;
+  animation: collapser-hide .5s ease 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes collapser-hide {
+  to {
+    height: 85%;
+  } 
+  from {
+    height: 0%;
+  }
+}
+@-webkit-keyframes collapser-hide {
+  to {
+    height: 85%;
+  }
+  from {
+    height: 0%;
+  }
+}
 
 //------------------------------------------------------
 // Sección Top Scroll
