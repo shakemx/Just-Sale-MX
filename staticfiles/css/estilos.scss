@@ -51,6 +51,36 @@ ul {
   list-style: none;
 }
 
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  border: 0;
+}
+.embed-responsive-9by16 {
+  padding-bottom: 177.77%;
+}
 
 //------------------------------------------------------
 // Sección Top Scroll
@@ -59,7 +89,8 @@ ul {
 .nav-link{
   font-size: xx-large;
   color: $texto_1!important;
-  margin-left: 3rem;
+  margin-left: 13rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
 }
 
 .menuShow {
@@ -235,23 +266,21 @@ ul {
   }
 }
 
+
+
 //---------------------------------------
-// Sección 1 Hero
+// Index
 //---------------------------------------
-.hero-desktop {
-  height: 100vh;
-  background-image: url("../img/home/prox_desktop.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: initial;
+#index {
+  h1, h2 {
+    color: $texto_1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+
+  a{
+    color: $texto_2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+
 }
 
-.hero-mobile {
-  height: 100vh;
-  background-image: url("../img/home/prox_mobile.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: initial;
-}

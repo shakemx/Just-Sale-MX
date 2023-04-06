@@ -1,15 +1,71 @@
 {% extends "base.html" %} {% load static %}
 
 <!-- SEO -->
-{% block title %} ¡Just Sale! PROXIMAMENTE {% endblock title %} 
-{%block description %} Muy pronto llegará a México la mejor solución para vender de forma segura, rápida y sin problemas tu casa. {% endblock description %}
+{% block title %} ¡Just Sale! PROXIMAMENTE {% endblock title %} {%block description %} Muy pronto llegará a México la mejor solución para vender de
+forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
 <!-- Body -->
-{% block content %} 
-{% include 'navbar.html' %}
+{% block content %} {% include 'navbar.html' %}
 
-   <header>
-   </header>
- 
+<!-- ======= Header Section ======= -->
+
+<header id="index">
+  <span class="d-none d-lg-block">
+    <div id="hero" class="d-flex align-items-center ratio ratio-16x9">
+      <video  autoplay muted loop id="myVideo">
+        <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
+      </video>
+      <div
+        class="container position-relative"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <h1>Just Sale</h1>
+        <h2>
+          Comprámos tu inmueble en solo 10 días*
+        </h2>
+        <a href="#about" class="btn-get-started scrollto">Mas info...</a>
+      </div>
+    </div>
+  </span>
+  <span class="d-lg-none">
+    <div id="hero" class=" embed-responsive embed-responsive-9by16 ">
+      <video  autoplay muted loop id="myVideo" class="video embed-responsive-item">
+        <source src="{% static 'img/video/just_916.mp4'%}" type="video/mp4" />
+      </video>
+      <div
+        class="container position-relative"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <h1>Just Sale</h1>
+        <h2>
+            Comprámos tu inmueble en solo 10 días*
+        </h2>
+        <a href="#about" class="btn-get-started scrollto">Mas info...</a>
+      </div>
+    </div>
+  </span>
+</header>
+
+<!-- ======= About Us Section ======= -->
+
+<section id="about">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col my-5">
+        <h2>Somos expertos en Soluciones Inmobiliarias que cambian tu futuro</h2>
+        <p>
+          Somos una empresa que se dedica a la compra de inmuebles en México, con
+          el objetivo de ofrecer una solución rápida y segura a las personas que
+          desean vender su casa o departamento. <span>Conócenos...</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="{% static 'js/custom.js' %}"></script>
 
 {% endblock content %}
