@@ -8,7 +8,7 @@
   font-family: "Quicksand", "sans-serif";
   src: local("Quicksand"), url("../fonts/uicksand-Regular.ttf") format("truetype"); }
 body {
-  background-color: #344558;
+  background-color: #fcfcfc;
   font-family: "ArticulatCF Normal", "sans-serif"; }
 
 section,
@@ -190,10 +190,95 @@ video {
   #topscroll::after {
     font-size: 0.9em;
     line-height: 30px; } }
+.container_full {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-scroll-snap-type: y mandatory;
+      -ms-scroll-snap-type: y mandatory;
+          scroll-snap-type: y mandatory;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap; }
+
+.slides_full {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  scroll-snap-align: start; }
+
+.square {
+  height: 100vh;
+  width: 55%;
+  background-color: #344558;
+  position: absolute;
+  z-index: -1;
+  margin-top: auto;
+  margin-bottom: auto;
+  bottom: 0;
+  top: 0;
+  left: 0; }
+
+.square-animate {
+  -webkit-animation: square-grow 1.2s ease-in 0s 1 normal;
+  animation: square-grow 1.2s ease-in 0s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@keyframes square-grow {
+  to {
+    height: 100vh;
+    width: 55%; }
+  from {
+    height: 50vh;
+    width: 50%; } }
+@-webkit-keyframes square-grow {
+  to {
+    height: 100vh;
+    width: 55%; }
+  from {
+    height: 50vh;
+    width: 50%; } }
+.square-finale {
+  -webkit-animation: square-finale 1.2s ease-out 0s 1 normal;
+  animation: square-finale 1.2s ease-out 0s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@keyframes square-finale {
+  to {
+    height: 50vh;
+    width: 50%; }
+  from {
+    height: 100vh;
+    width: 55%; } }
+@-webkit-keyframes square-finale {
+  to {
+    height: 50vh;
+    width: 50%; }
+  from {
+    height: 100vh;
+    width: 55%; } }
 #index h1, #index h2 {
   color: #fcfcfc;
   text-shadow: 2px 2px 4px black; }
 #index a {
+  color: #dbb76d;
+  text-shadow: 2px 2px 4px black; }
+
+#about h2, #about p {
+  color: #fcfcfc;
+  text-shadow: 2px 2px 4px black; }
+#about span {
   color: #dbb76d;
   text-shadow: 2px 2px 4px black; }
 

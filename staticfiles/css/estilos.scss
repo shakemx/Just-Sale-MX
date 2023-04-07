@@ -2,15 +2,16 @@
 // Patrones de CSS
 // ------------------------------------------------------------
 
-$primario: #344558;;
-$secundario: #917236;
-$acento: #ae8b4b;
-$texto_1: #fcfcfc;
-$texto_2: #dbb76d;
+$primary: #344558;;
+$secondary: #917236;
+$accent: #ae8b4b;
+$text_1: #fcfcfc;
+$text_2: #dbb76d;
 $shake: #6918b4;
 $success: #03A258;
 $danger: #D92F55;
 $info: #006FE0;
+$background: #fcfcfc;
 
 @font-face {
   font-family: "ArticulatCF Bold", "sans-serif";
@@ -34,7 +35,7 @@ $info: #006FE0;
 //------------------------------------------------------
 
 body {
-  background-color: $primario;
+  background-color: $background;
   font-family:  "ArticulatCF Normal", "sans-serif";
 }
 
@@ -83,12 +84,12 @@ video {
 }
 
 //------------------------------------------------------
-// Sección Top Scroll
+// Navbar
 //------------------------------------------------------
 
 .nav-link{
   font-size: xx-large;
-  color: $texto_1!important;
+  color: $text_1!important;
   margin-left: 13rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
 }
@@ -215,12 +216,12 @@ video {
 }
 
 //------------------------------------------------------
-// Sección Top Scroll
+// Top Scroll
 //------------------------------------------------------
 
 #topscroll {
   display: inline-block;
-  background-color: $secundario;
+  background-color: $secondary;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -240,14 +241,14 @@ video {
   font-style: normal;
   font-size: 1.5em;
   line-height: 50px;
-  color: $texto_1;
+  color: $text_1;
 }
 #topscroll:hover {
   cursor: pointer;
-  background-color: rgba($color: $secundario, $alpha: 0.6);
+  background-color: rgba($color: $secondary, $alpha: 0.6);
 }
 #topscroll:active {
-  background-color: rgba($color: $secundario, $alpha: 0.8);
+  background-color: rgba($color: $secondary, $alpha: 0.8);
 }
 #topscroll.show {
   opacity: 1;
@@ -266,6 +267,102 @@ video {
   }
 }
 
+//------------------------------------------------------
+// Full Scroll
+//------------------------------------------------------
+
+.container_full {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  flex-flow: column nowrap;
+}
+
+.slides_full{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+
+//------------------------------------------------------
+// Full Div
+//------------------------------------------------------
+
+
+.square{
+  height: 100vh;
+  width: 55%;
+  background-color: $primary;
+  position: absolute;
+  z-index: -1;
+  margin-top: auto;
+  margin-bottom: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+ 
+}
+
+.square-animate{
+  -webkit-animation: square-grow 1.2s ease-in 0s 1 normal;
+  animation: square-grow 1.2s ease-in 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes square-grow {
+  to {
+    height: 100vh;
+    width: 55%;
+  } 
+  from {
+    height: 50vh;
+    width: 50%;
+  }
+}
+@-webkit-keyframes square-grow {
+  to {
+    height: 100vh;
+    width: 55%;
+  } 
+  from {
+    height: 50vh;
+    width: 50%;
+  }
+}
+
+.square-finale{
+  -webkit-animation: square-finale 1.2s ease-out 0s 1 normal;
+  animation: square-finale 1.2s ease-out 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes square-finale {
+  to {
+    height: 50vh;
+    width: 50%;
+  } 
+  from {
+    height: 100vh;
+    width: 55%;
+  }
+}
+@-webkit-keyframes square-finale {
+  to {
+    height: 50vh;
+    width: 50%;
+  } 
+  from {
+    height: 100vh;
+    width: 55%;
+  }
+}
+
+
 
 
 //---------------------------------------
@@ -273,14 +370,33 @@ video {
 //---------------------------------------
 #index {
   h1, h2 {
-    color: $texto_1;
+    color: $text_1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
 
   a{
-    color: $texto_2;
+    color: $text_2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
 
 }
+
+//---------------------------------------
+// About
+//---------------------------------------
+#about {
+  h2, p{
+    color: $text_1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+
+  span {
+    color: $text_2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+
+}
+
+
+
 
