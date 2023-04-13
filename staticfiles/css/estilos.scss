@@ -2,8 +2,8 @@
 // Patrones de CSS
 // ------------------------------------------------------------
 
-$primary: #344558;;
-$secondary: #917236;
+$primary: #917236;
+$secondary: #344558;
 $accent: #ae8b4b;
 $text_1: #fcfcfc;
 $text_2: #dbb76d;
@@ -12,11 +12,16 @@ $success: #03A258;
 $danger: #D92F55;
 $info: #006FE0;
 $background: #fcfcfc;
+@mixin gradiant($light, $dark) {
+  background: $light;
+  background: radial-gradient(circle, rgba($color: $light, $alpha: 1) 0%, rgba($color: $dark, $alpha: 1) 66%);
+}
 
 @font-face {
   font-family: "ArticulatCF Bold", "sans-serif";
   src: local("ArticulatCF Bold"),
   url("../fonts/ArticulatCF-Bold.ttf") format("truetype");
+  color: rgba($color: $secondary, $alpha: 0.8) ;
 }
 
 @font-face {
@@ -37,6 +42,12 @@ $background: #fcfcfc;
 body {
   background-color: $background;
   font-family:  "ArticulatCF Normal", "sans-serif";
+  color: black;
+  opacity: 87%;
+}
+
+h1{
+  font-family: "ArticulatCF Bold", "sans-serif";
 }
 
 section,
@@ -297,7 +308,7 @@ video {
 .square{
   height: 100vh;
   width: 55%;
-  background-color: $primary;
+  @include gradiant($accent, $primary);
   position: absolute;
   z-index: -1;
   margin-top: auto;
@@ -309,8 +320,8 @@ video {
 }
 
 .square-animate{
-  -webkit-animation: square-grow 1.2s ease-in 0s 1 normal;
-  animation: square-grow 1.2s ease-in 0s 1 normal;
+  -webkit-animation: square-grow .7s ease-in 0s 1 normal;
+  animation: square-grow .7s ease-in 0s 1 normal;
   animation-fill-mode: forwards;
 }
 
@@ -336,8 +347,8 @@ video {
 }
 
 .square-finale{
-  -webkit-animation: square-finale 1.2s ease-out 0s 1 normal;
-  animation: square-finale 1.2s ease-out 0s 1 normal;
+  -webkit-animation: square-finale .7s ease-out 0s 1 normal;
+  animation: square-finale .7s ease-out 0s 1 normal;
   animation-fill-mode: forwards;
 }
 
@@ -395,8 +406,198 @@ video {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
 
+  .img-about {
+    height: auto;
+    width: 55%;
+    background-color: $primary;
+    position: absolute;
+    z-index: -2;
+    margin-top: auto;
+    margin-bottom: auto;
+    bottom: 0;
+    top: 0;
+    right: 100%;
+    border-radius: 2%;
+    filter: contrast(1.75) brightness(1.2) blur(3px);
+}
+
+.img-about-animate{
+  -webkit-animation: img-about-grow 1s linear .7s 1 normal;
+  animation: img-about-grow 1s linear .7s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-about-grow {
+  0% {
+    right: 100%;
+    filter: blur(4px);
+  }
+  75%{
+    right: -15%;
+    filter: blur(1px);
+  }
+  100% {
+    right: -5%;
+    filter: blur(0);
+  } 
+  
+}
+@-webkit-keyframes img-about-grow {
+  0% {
+    right: 100%;
+    filter: blur(4px);
+  }
+  75%{
+    right: -15%;
+    filter: blur(1px);
+  }
+  100% {
+    right: -5%;
+    filter: blur(0);
+  } 
+}
+
+.img-about-finale{
+  -webkit-animation: img-about-finale .5s linear 0s 1 normal;
+  animation: img-about-finale .5s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-about-finale {
+  to {
+    right: -100%;
+    filter: blur(4px);
+  } 
+  from {
+    right: -5%;
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes img-about-finale {
+  to {
+    right: -100%;
+    filter: blur(4px);
+  } 
+  from {
+    right: -5%;
+    filter: blur(0);
+  }
+}
+
+}
+
+//---------------------------------------
+// Process
+//---------------------------------------
+
+#process{
+
+  .row_process{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .card{
+    border: 0px solid $accent!important;
+  }
+
+  .card-body{
+    font-family: "Quicksand", "sans-serif";
+  }
+  .card-title{
+    text-align: center;
+  }
+
+  .box_icon{
+    @include gradiant($accent, $primary);
+    border-radius: 15% 0 15% 0;
+  }
+
+  .img-action_01 {
+    height: auto;
+    width: 55%;
+    background-color: $primary;
+    position: absolute;
+    z-index: -2;
+    margin-top: auto;
+    margin-bottom: auto;
+    bottom: 0;
+    top: 0;
+    right: 100%;
+    border-radius: 2%;
+    filter: contrast(1.75) brightness(1.2) blur(3px);
+}
+  
 }
 
 
+//---------------------------------------
+// Action 01
+//---------------------------------------
 
+#action_01{
+  position: relative;
+  h2, p {
+    color: $text_1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+  .img-action {
+    height: 65vh;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    margin-top: auto;
+    margin-bottom: auto;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    filter: contrast(1.25) brightness(.8) blur(5px);
+}
 
+.img-action-animate{
+  -webkit-animation: img-action-grow 1.5s ease 0s 1 normal;
+  animation: img-action-grow 1.5s ease 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-action-grow {
+  to {
+    filter: contrast(1.25) brightness(.8) blur(0);
+  } 
+  from {
+    filter: contrast(1.25) brightness(.8) blur(5px);
+  }
+}
+@-webkit-keyframes img-action-grow {
+  to {
+    filter: contrast(1.25) brightness(.8) blur(0);
+  } 
+  from {
+    filter: contrast(1.25) brightness(.8) blur(5px);
+  }
+}
+
+.img-action-finale{
+  -webkit-animation: img-action-end 1.5s ease 0s 1 normal;
+  animation: img-action-end 1.5s ease 0s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-action-end {
+  to {
+    filter: contrast(1.25) brightness(.8) blur(5px);
+  } 
+  from {
+    filter: contrast(1.25) brightness(.8) blur(0);
+  }
+}
+@-webkit-keyframes img-action-end {
+  to {
+    filter: contrast(1.25) brightness(.8) blur(5px);
+  } 
+  from {
+    filter: contrast(1.25) brightness(.8) blur(0);
+  }
+}
+}

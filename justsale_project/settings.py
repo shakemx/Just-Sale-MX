@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'debug_toolbar',
+    'basemodel',
     'home',
+    'news',
+    'promotions',
+    'testimonials'
 ]
 
 MIDDLEWARE = [

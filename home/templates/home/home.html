@@ -68,6 +68,15 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <span>Conócenos...</span>
             </p>
           </div>
+          <div class="d-none d-lg-block col-lg-6">
+            <span class="img-about-wrapper">
+              <img
+                src="{% static 'img/home/about.png'%}"
+                alt="Acerca de Just Sale"
+                class="img-about img-about-animate img-about-finale"
+              />
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -76,56 +85,78 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Process Section ======= -->
 
   <section class="slides_full" id="process">
-    <div class="container py-5">
+    <div class="container h-75">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
           <h2>Así de Fácil</h2>
-        </div>
-        <div class="col-12">
           <h3>Son 4 sencillos pasos</h3>
         </div>
       </div>
-      <div class="row">
+      <div class="row row_process">
         <div class="col-6 col-lg-3">
           <div class="card">
+            <div class="box_icon p-3">
+              <img
+                src="{% static 'img/home/agenda.png'%}"
+                class="card-img-top"
+                alt="Agenda"
+              />
+            </div>
             <div class="card-body">
               <h5 class="card-title">Agenda</h5>
               <p class="card-text">
-                Llena el formulario de contacto o llámanos para agendar una
-                cita.
+                Agenda una cita para conocer tu inmueble y realizar un avalúo.
               </p>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-3">
           <div class="card">
+            <div class="box_icon p-3">
+            <img
+              src="{% static 'img/home/propuesta.png'%}"
+              class="card-img-top"
+              alt="Propuesta"
+            />
+            </div>
             <div class="card-body">
               <h5 class="card-title">Propuesta</h5>
               <p class="card-text">
-                Llena el formulario de contacto o llámanos para agendar una
-                cita.
+                Recibe una propuesta de compra justa para la compra de tu inmueble.
               </p>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-3">
           <div class="card">
+            <div class="box_icon p-3">
+            <img
+              src="{% static 'img/home/acepta.png'%}"
+              class="card-img-top"
+              alt="Acepta"
+            />
+            </div>
             <div class="card-body">
               <h5 class="card-title">Acepta</h5>
               <p class="card-text">
-                Llena el formulario de contacto o llámanos para agendar una
-                cita.
+                Acepta la propuesta para comenzar la operación e integrar su expediente.
               </p>
             </div>
           </div>
         </div>
         <div class="col-6 col-lg-3">
           <div class="card">
+            <div class="box_icon p-3">
+            <img
+              src="{% static 'img/home/pago.png'%}"
+              class="card-img-top"
+              alt="Pago"
+            />
+            </div>
             <div class="card-body">
               <h5 class="card-title">Pago</h5>
               <p class="card-text">
-                Llena el formulario de contacto o llámanos para agendar una
-                cita.
+                Realizaremos los tramites para firma ante notario y pago del inmueble.
               </p>
             </div>
           </div>
@@ -139,9 +170,12 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <section class="slides_full" id="action_01">
     <div class="container py-5">
       <div class="row align-items-center">
-        <div class="col my-5">
-          <h2>Vive...Invierte...Disfruta...Transforma</h2>
-          <p>Con Just Sale solo vende,<span> hoy...</span></p>
+        <div class="col my-5 text-center">
+          <span class="img-action-wrapper">
+            <img src="{% static 'img/home/accion_01.png'%}" class="img-action img-action-animate img-action-finale" alt="Recupera tu capital">
+          </span>
+          <h2>Invertir en mi negocio</h2>
+          <p>¿Qúe harías si recuperaras tu capital?<span> Saber más...</span></p>
         </div>
       </div>
     </div>
@@ -160,6 +194,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             Conoce lo último en noticias e infiormación sobre el Sector
             Inmobiliario
           </h3>
+          <p>
+          {% for i in news %}
+          {{ i }}
+          {% endfor %}
+        </p>
         </div>
       </div>
     </div>
@@ -536,7 +575,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 <script>
   // Animate Div Observer
 const square = document.querySelector('.square');
+const imgabout = document.querySelector('.img-about');
+const imgaaction01 = document.querySelector('.img-action');
 square.classList.remove('square-animate');
+imgabout.classList.remove('img-about-animate');
+imgaaction01.classList.remove('img-action-animate');
 
 
 
@@ -544,16 +587,25 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       square.classList.add('square-animate');
-      square.classList.remove('square-finale');
-      console.log('intersecting');
+      imgabout.classList.add('img-about-animate');
+      imgaaction01.classList.add('img-action-animate');  
+      imgabout.classList.remove('img-about-finale');
+      square.classList.remove('square-finale');  
+      imgaaction01.classList.remove('img-action-finale');   
+      
       return;
     }
     square.classList.remove('square-animate');
-    square.classList.add('square-finale');
-    console.log('not intersecting');
+    imgabout.classList.remove('img-about-animate');
+    imgaaction01.classList.remove('img-action-animate');
+    square.classList.add('square-finale');    
+    imgabout.classList.add('img-about-finale');
+    imgaaction01.classList.add('img-action-finale');
   });
 });
 observer.observe(document.querySelector('.square-wrapper'));
+observer.observe(document.querySelector('.img-about-wrapper'));
+observer.observe(document.querySelector('.img-action-wrapper'));
 </script>
 
 {% endblock content %}

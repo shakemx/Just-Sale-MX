@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 
-# Create your views here.
+from news.views import news
 
 
 
 def home(request):
     if request.method == 'GET':
-        return render(request, 'home/home.html')
+        news = news()
+        context = {'news': news}
+        return render(request, 'home/home.html', context=context)
     return redirect('home')
