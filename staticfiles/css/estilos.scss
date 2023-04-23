@@ -601,3 +601,41 @@ video {
   }
 }
 }
+
+//---------------------------------------
+// Feed
+//---------------------------------------
+
+#feed{
+
+  .row_process{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .card{
+    border: 0px solid $accent!important;
+  }
+
+  .card-body{
+    font-family: "Quicksand", "sans-serif";
+  }
+  .card-title{
+    text-align: center;
+  }
+
+  button {
+    color: $primary;
+  }
+  .control-left {
+    position: absolute;
+    left: -5%;
+    width: 5%;
+  }
+  .control-right {
+    position: absolute;
+    right: -5%;
+    width: 5%;
+  }
+}

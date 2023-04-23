@@ -184,21 +184,49 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Feed Section ======= -->
 
   <section class="slides_full" id="feed">
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <div class="col-12">
+    <div class="container h-75">
+      <div class="row ">
+        <div class="col-12 text-center">
           <h2>Mundo Just Sale</h2>
-        </div>
-        <div class="col-12">
           <h3>
-            Conoce lo último en noticias e infiormación sobre el Sector
+            Conoce lo último en noticias e información sobre el Sector
             Inmobiliario
-          </h3>
-          <p>
-          {% for i in news %}
-          {{ i }}
-          {% endfor %}
-        </p>
+          </h3>      
+        </div>
+        <div class="row row_process">
+          <div id="carouselNews" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {% for new in news %}
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}"  data-bs-interval="10000">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">{{new.title}}</h5>
+                    <p class="card-text">{{new.subtitle}}</p>
+                    <a href="{{new.url_news}}" target="_blank"
+                      ><span class="">Mas...</span></a
+                    >
+                    <a href="..">
+                      <div class="d-inline-flex">
+                        <h6>
+                          <span class="mas mx-2">más</span
+                          ><i class="fas fa-arrow-right"></i>
+                        </h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselNews" data-bs-slide="prev">
+              <span class="fa fa-chevron-left fa-3x" aria-hidden="true" ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselNews" data-bs-slide="next">
+              <span class="fa fa-chevron-right fa-3x" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -207,7 +235,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Testimonials Section ======= -->
 
   <section class="slides_full" id="testimonials">
-    <div class="container py-5">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-12">
           <h2>Historias de Éxito</h2>

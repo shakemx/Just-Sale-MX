@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'basemodel',
     'home',
-    'news',
     'promotions',
-    'testimonials'
+    'testimonials',
+    'app_news',
+    
 ]
 
 MIDDLEWARE = [

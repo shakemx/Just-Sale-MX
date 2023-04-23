@@ -2,7 +2,7 @@ from django.db import models
 
 from basemodel.models import BaseModel
 
-class Testimonials(BaseModel):
+class Testimonial(BaseModel):
     headline = models.CharField('Nombre', max_length=40,blank=False, null=False)
     lead = models.CharField('Frase', max_length=40,blank=False, null=False)
     body = models.TextField('Resumen', max_length=100,blank=False, null=False)

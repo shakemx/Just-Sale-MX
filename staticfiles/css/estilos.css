@@ -444,5 +444,29 @@ video {
   from {
     -webkit-filter: contrast(1.25) brightness(0.8) blur(0);
             filter: contrast(1.25) brightness(0.8) blur(0); } }
+#feed .row_process {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+#feed .card {
+  border: 0px solid #ae8b4b !important; }
+#feed .card-body {
+  font-family: "Quicksand", "sans-serif"; }
+#feed .card-title {
+  text-align: center; }
+#feed button {
+  color: #917236; }
+#feed .control-left {
+  position: absolute;
+  left: -5%;
+  width: 5%; }
+#feed .control-right {
+  position: absolute;
+  right: -5%;
+  width: 5%; }
 
 /*# sourceMappingURL=estilos.css.map */
