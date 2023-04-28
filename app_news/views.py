@@ -15,7 +15,7 @@ def news(request):
         language = "es"
         country = {"mx,es"}
         sources = {'inmobiliare.com, centrourbano.com, milenio.com, maspormas.com, merca20.com, revistaad.es, losojosdehipatia.com.es, america-retail.com, archdaily.mx'}
-        sort_by = "date"
+        sort_by = "relevancy"
         since = "1 day ago"
         headers = {
             "x-api-key": environ['API_KEY_NEWSCATCHER'],

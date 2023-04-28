@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% load static %}
 
 <!-- SEO -->
-{% block title %} ¡Just Sale! PROXIMAMENTE {% endblock title %} {%block description %} Muy pronto llegará a México la mejor solución para vender de
+{% block title %} ¡Just Sale! PROXIMAMENTE {% endblock title %} 
+{%block description %} Muy pronto llegará a México la mejor solución para vender de
 forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
 <!-- Body -->
@@ -9,49 +10,49 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
 <!-- ======= Header Section ======= -->
 <div class="container_full">
-<header id="index" style=" scroll-snap-align: start">
-  <span class="d-none d-lg-block">
-    <div id="hero" class="d-flex align-items-center ratio ratio-16x9">
-      <video autoplay muted loop id="myVideo">
-        <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
-      </video>
-      <div
-        class="container position-relative"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-        <h1>Just Sale</h1>
-        <h2>Comprámos tu casa de forma rápida, fácil y segura</h2>
-        <a href="#about" class="btn-get-started scrollto">Mas info...</a>
+  <header id="index" style="scroll-snap-align: start">
+    <span class="d-none d-lg-block">
+      <div id="hero" class="d-flex align-items-center ratio ratio-16x9">
+        <video autoplay muted loop id="myVideo">
+          <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
+        </video>
+        <div
+          class="container position-relative"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <h1>Just Sale</h1>
+          <h2>Comprámos tu casa de forma rápida, fácil y segura</h2>
+          <a href="#about" class="btn-get-started scrollto follow">Mas info...</a>
+        </div>
       </div>
-    </div>
-  </span>
-  <span class="d-lg-none">
-    <div id="hero" class="embed-responsive embed-responsive-9by16">
-      <video
-        autoplay
-        muted
-        loop
-        id="myVideo"
-        class="video embed-responsive-item"
-      >
-        <source src="{% static 'img/video/just_916.mp4'%}" type="video/mp4" />
-      </video>
-      <div
-        class="container position-relative"
-        data-aos="fade-up"
-        data-aos-delay="500"
-      >
-        <h1>Just Sale</h1>
-        <h2>Comprámos tu depa de forma rápida, fácil y segura</h2>
-        <a href="#about" class="btn-get-started scrollto">Mas info...</a>
+    </span>
+    <span class="d-lg-none">
+      <div id="hero" class="embed-responsive embed-responsive-9by16">
+        <video
+          autoplay
+          muted
+          loop
+          id="myVideo"
+          class="video embed-responsive-item"
+        >
+          <source src="{% static 'img/video/just_916.mp4'%}" type="video/mp4" />
+        </video>
+        <div
+          class="container position-relative"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <h1>Just Sale</h1>
+          <h2>Comprámos tu depa de forma rápida, fácil y segura</h2>
+          <a href="#about" class="btn-get-started scrollto">Mas info...</a>
+        </div>
       </div>
-    </div>
-  </span>
-</header>
+    </span>
+  </header>
 
   <!-- ======= About Us Section ======= -->
-  
+
   <section class="slides_full" id="about">
     <div class="container-fluid position-relative">
       <div class="container">
@@ -64,9 +65,9 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             <p>
               Somos una empresa que se dedica a la compra de inmuebles en
               México, con el objetivo de ofrecer una solución rápida y segura a
-              las personas que desean vender su casa o departamento.
-              <span>Conócenos...</span>
+              las personas que desean vender su casa o departamento.              
             </p>
+            <p><span class="follow">Conoce más de Just Sale...</span></p>
           </div>
           <div class="d-none d-lg-block col-lg-6">
             <span class="img-about-wrapper">
@@ -113,16 +114,17 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         <div class="col-6 col-lg-3">
           <div class="card">
             <div class="box_icon p-3">
-            <img
-              src="{% static 'img/home/propuesta.png'%}"
-              class="card-img-top"
-              alt="Propuesta"
-            />
+              <img
+                src="{% static 'img/home/propuesta.png'%}"
+                class="card-img-top"
+                alt="Propuesta"
+              />
             </div>
             <div class="card-body">
               <h5 class="card-title">Propuesta</h5>
               <p class="card-text">
-                Recibe una propuesta de compra justa para la compra de tu inmueble.
+                Recibe una propuesta de compra justa para la compra de tu
+                inmueble.
               </p>
             </div>
           </div>
@@ -130,16 +132,17 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         <div class="col-6 col-lg-3">
           <div class="card">
             <div class="box_icon p-3">
-            <img
-              src="{% static 'img/home/acepta.png'%}"
-              class="card-img-top"
-              alt="Acepta"
-            />
+              <img
+                src="{% static 'img/home/acepta.png'%}"
+                class="card-img-top"
+                alt="Acepta"
+              />
             </div>
             <div class="card-body">
               <h5 class="card-title">Acepta</h5>
               <p class="card-text">
-                Acepta la propuesta para comenzar la operación e integrar su expediente.
+                Acepta la propuesta para comenzar la operación e integrar su
+                expediente.
               </p>
             </div>
           </div>
@@ -147,16 +150,17 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         <div class="col-6 col-lg-3">
           <div class="card">
             <div class="box_icon p-3">
-            <img
-              src="{% static 'img/home/pago.png'%}"
-              class="card-img-top"
-              alt="Pago"
-            />
+              <img
+                src="{% static 'img/home/pago.png'%}"
+                class="card-img-top"
+                alt="Pago"
+              />
             </div>
             <div class="card-body">
               <h5 class="card-title">Pago</h5>
               <p class="card-text">
-                Realizaremos los tramites para firma ante notario y pago del inmueble.
+                Realizaremos los tramites para firma ante notario y pago del
+                inmueble.
               </p>
             </div>
           </div>
@@ -172,10 +176,16 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row align-items-center">
         <div class="col my-5 text-center">
           <span class="img-action-wrapper">
-            <img src="{% static 'img/home/accion_01.png'%}" class="img-action img-action-animate img-action-finale" alt="Recupera tu capital">
+            <img
+              src="{% static 'img/home/accion_01.png'%}"
+              class="img-action img-action-animate img-action-finale"
+              alt="Recupera tu capital"
+            />
           </span>
           <h2>Invertir en mi negocio</h2>
-          <p>¿Qúe harías si recuperaras tu capital?<span> Saber más...</span></p>
+          <p>
+            ¿Qúe harías si recuperaras tu capital?<span> Saber más...</span>
+          </p>
         </div>
       </div>
     </div>
@@ -185,44 +195,45 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
   <section class="slides_full" id="feed">
     <div class="container h-75">
-      <div class="row ">
+      <div class="row">
         <div class="col-12 text-center">
           <h2>Mundo Just Sale</h2>
           <h3>
             Conoce lo último en noticias e información sobre el Sector
             Inmobiliario
-          </h3>      
+          </h3>
         </div>
-        <div class="row row_process">
-          <div id="carouselNews" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              {% for new in news %}
-              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}"  data-bs-interval="10000">
+        <div class="row mt-3 ">
+          <div
+            id="carouselExampleControls"
+            class="carousel"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">  
+            {% for new in news|slice:"7" %}
+            
+              <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
                 <div class="card">
-                  <div class="card-body text-center">
-                    <h5 class="card-title">{{new.title}}</h5>
-                    <p class="card-text">{{new.subtitle}}</p>
-                    <a href="{{new.url_news}}" target="_blank"
-                      ><span class="">Mas...</span></a
-                    >
-                    <a href="..">
-                      <div class="d-inline-flex">
-                        <h6>
-                          <span class="mas mx-2">más</span
-                          ><i class="fas fa-arrow-right"></i>
-                        </h6>
-                      </div>
-                    </a>
+                  <div class="img-wrapper">
+                    <img
+                      src="{{ new.image_news }}"
+                      class="d-block w-100"
+                      alt="{{ new.title }}"
+                    />
+                  </div>
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">{{new.title}} <span><a href="{{new.url_news}}" target="_blank" class="btn-get-started scrollto follow">Leer más...</a></span></h5>
                   </div>
                 </div>
               </div>
-              {% endfor %}
+            
+            {% endfor %}
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselNews" data-bs-slide="prev">
-              <span class="fa fa-chevron-left fa-3x" aria-hidden="true" ></span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="fa fa-chevron-left fa-3x" aria-hidden="true"></span>
               <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselNews" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
               <span class="fa fa-chevron-right fa-3x" aria-hidden="true"></span>
               <span class="visually-hidden">Siguiente</span>
             </button>
@@ -237,12 +248,40 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <section class="slides_full" id="testimonials">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-12">
+        
+        <div class="col col-lg-6">
           <h2>Historias de Éxito</h2>
-        </div>
-        <div class="col-12">
           <h3>Te compartimos la opinón de nuestros clientes</h3>
         </div>
+        <div class="col-lg-6 ">
+          {% for testimonial in testimonials|slice:"2" %}
+          <div class="col-12 mt-3">
+            <div class="card-testimonial mx-auto">
+              <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
+                <img
+                src="{{ testimonial.image_testimonial }}"
+                alt="{{ testimonial.lead}}"
+                class="img-testimonial mx-1"
+                />
+              </a>
+              <h5 class="m-0">{{ testimonial.lead }}</h5>
+              <div class="border-testimonial"></div>
+              <h6 class="m-0">{{ testimonial.headline }}</h6>
+              <p class="m-0">{{ testimonial.body }}</p>
+            </div>
+          </div>
+          <div class="modal fade" id="modal-{{testimonial.id}}" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content bg-transparent">
+                <div class="ratio ratio-16x9">
+                  <iframe width="560" height="315" src="{{testimonial.url_video|safe}}" title="{{testimonial.lead}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
       </div>
     </div>
   </section>
@@ -597,43 +636,77 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     </div>
   </section>
 
-  {% include 'footer.html' %}
+  <!--{% include 'footer.html' %}-->
 </div>
 
 <script>
   // Animate Div Observer
-const square = document.querySelector('.square');
-const imgabout = document.querySelector('.img-about');
-const imgaaction01 = document.querySelector('.img-action');
-square.classList.remove('square-animate');
-imgabout.classList.remove('img-about-animate');
-imgaaction01.classList.remove('img-action-animate');
+  const square = document.querySelector(".square");
+  const imgabout = document.querySelector(".img-about");
+  const imgaaction01 = document.querySelector(".img-action");
+  square.classList.remove("square-animate");
+  imgabout.classList.remove("img-about-animate");
+  imgaaction01.classList.remove("img-action-animate");
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        square.classList.add("square-animate");
+        imgabout.classList.add("img-about-animate");
+        imgaaction01.classList.add("img-action-animate");
+        imgabout.classList.remove("img-about-finale");
+        square.classList.remove("square-finale");
+        imgaaction01.classList.remove("img-action-finale");
 
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      square.classList.add('square-animate');
-      imgabout.classList.add('img-about-animate');
-      imgaaction01.classList.add('img-action-animate');  
-      imgabout.classList.remove('img-about-finale');
-      square.classList.remove('square-finale');  
-      imgaaction01.classList.remove('img-action-finale');   
-      
-      return;
-    }
-    square.classList.remove('square-animate');
-    imgabout.classList.remove('img-about-animate');
-    imgaaction01.classList.remove('img-action-animate');
-    square.classList.add('square-finale');    
-    imgabout.classList.add('img-about-finale');
-    imgaaction01.classList.add('img-action-finale');
+        return;
+      }
+      square.classList.remove("square-animate");
+      imgabout.classList.remove("img-about-animate");
+      imgaaction01.classList.remove("img-action-animate");
+      square.classList.add("square-finale");
+      imgabout.classList.add("img-about-finale");
+      imgaaction01.classList.add("img-action-finale");
+    });
   });
-});
-observer.observe(document.querySelector('.square-wrapper'));
-observer.observe(document.querySelector('.img-about-wrapper'));
-observer.observe(document.querySelector('.img-action-wrapper'));
+  observer.observe(document.querySelector(".square-wrapper"));
+  observer.observe(document.querySelector(".img-about-wrapper"));
+  observer.observe(document.querySelector(".img-action-wrapper"));
 </script>
+<script>
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
 
+var cardWidth = $(".carousel-item").width();
+
+var scrollPosition = 0;
+
+$(".carousel-control-next").on("click", function () {
+  if (scrollPosition < (carouselWidth - cardWidth * 1)) { //check if you can go any further
+    scrollPosition += cardWidth;  //update scroll position
+    $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
+  }
+});
+
+$(".carousel-control-prev").on("click", function () {
+  if (scrollPosition > 0) {
+    scrollPosition -= cardWidth;
+    $(".carousel-inner").animate(
+      { scrollLeft: scrollPosition },
+      600
+    );
+  }
+});
+
+var multipleCardCarousel = document.querySelector(
+  "#carouselExampleControls"
+);
+if (window.matchMedia("(min-width: 768px)").matches) {
+  //rest of the code
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false
+  });
+} else {
+  $(multipleCardCarousel).addClass("slide");
+}
+
+</script>
 {% endblock content %}

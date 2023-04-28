@@ -6,6 +6,7 @@ class Testimonial(BaseModel):
     headline = models.CharField('Nombre', max_length=40,blank=False, null=False)
     lead = models.CharField('Frase', max_length=40,blank=False, null=False)
     body = models.TextField('Resumen', max_length=100,blank=False, null=False)
+    image_testimonial = models.ImageField('Imagen Testimonio',blank=False, null=False, default='default.jpg')
     url_video = models.URLField('Youtube URL', blank=False, null=False)
     is_active = models.BooleanField('Activa', default=True)
 
