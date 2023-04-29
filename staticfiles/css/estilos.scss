@@ -12,7 +12,8 @@ $shake: #6918b4;
 $success: #03a258;
 $danger: #d92f55;
 $info: #006fe0;
-$background: #fcfcfc;
+$background: #ffffff;
+$background_2: #FAF9F4;
 @mixin gradiant($light, $dark) {
   background: $light;
   background: radial-gradient(
@@ -43,6 +44,9 @@ $background: #fcfcfc;
 //------------------------------------------------------
 // ESTILOS BODY
 //------------------------------------------------------
+
+
+
 
 body {
   background-color: $background;
@@ -100,17 +104,23 @@ video {
   padding-bottom: 177.77%;
 }
 
+#process, #feed, #contact{
+  background-color: $background_2;
+}
+
+
 //------------------------------------------------------
 // ESTILOS HEADER
 //------------------------------------------------------
 
 .follow {
   color: $accent_2!important;
-  text-shadow: none!important;
+  text-shadow: 0px 5px 25px rgba($text_1, 0.30)!important;
   font-weight: 600;
-  font-size: small;
+  font-size: medium;
   padding: 0;
   margin: 0;
+  text-transform: uppercase;
 
 }
 
@@ -394,13 +404,8 @@ video {
 //---------------------------------------
 #index {
   h1,
-  h2 {
+  h3 {
     color: $text_1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
-  }
-
-  a {
-    color: $text_2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
 }
@@ -543,7 +548,7 @@ video {
 #action_01 {
   position: relative;
   h2,
-  p {
+  h5 {
     color: $text_1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
@@ -613,6 +618,18 @@ video {
 
 #feed {
 
+  @media (min-width: 992px) {
+    .container{
+        max-width: 90vw;
+    }
+  }
+
+  @media (min-width: 1400PX) {
+    .container{
+        max-width: 80vw;
+    }
+  }
+
   span a{
     color: $accent_2!important;
     font-size: small!important;
@@ -658,7 +675,7 @@ video {
     align-items: stretch;
     border-radius: 15px;
     border: none;
-    height: 20rem;
+    height: 30rem;
   }
 
   img {
@@ -729,6 +746,249 @@ video {
   
   .img-testimonial{
     width: 500px;
-    margin: 0 auto;
+    margin: 0 auto; 
   }
+
+  .img-testimonial:hover{
+    cursor: pointer;
+  }
+}
+
+
+//---------------------------------------
+// Action 02
+//---------------------------------------
+
+#action_02 {
+  position: relative;
+  h2,
+  h5 {
+    color: $text_1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
+  }
+  .img-action02 {
+    height: 65vh;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    margin-top: auto;
+    margin-bottom: auto;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    filter: contrast(1.25) brightness(0.8) blur(5px);
+  }
+
+  .img-action02-animate {
+    -webkit-animation: img-action02-grow 1.5s ease 0s 1 normal;
+    animation: img-action02-grow 1.5s ease 0s 1 normal;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes img-action02-grow {
+    to {
+      filter: contrast(1.25) brightness(0.8) blur(0);
+    }
+    from {
+      filter: contrast(1.25) brightness(0.8) blur(5px);
+    }
+  }
+  @-webkit-keyframes img-action02-grow {
+    to {
+      filter: contrast(1.25) brightness(0.8) blur(0);
+    }
+    from {
+      filter: contrast(1.25) brightness(0.8) blur(5px);
+    }
+  }
+
+  .img-action02-finale {
+    -webkit-animation: img-action02-end 1.5s ease 0s 1 normal;
+    animation: img-action02-end 1.5s ease 0s 1 normal;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes img-action02-end {
+    to {
+      filter: contrast(1.25) brightness(0.8) blur(5px);
+    }
+    from {
+      filter: contrast(1.25) brightness(0.8) blur(0);
+    }
+  }
+  @-webkit-keyframes img-action02-end {
+    to {
+      filter: contrast(1.25) brightness(0.8) blur(5px);
+    }
+    from {
+      filter: contrast(1.25) brightness(0.8) blur(0);
+    }
+  }
+}
+
+//---------------------------------------
+// FAQS
+//---------------------------------------
+
+#faqs{
+  a{
+    color: $accent
+  }
+
+  h5{
+    color: $secondary;
+  }
+
+  h6{ 
+    color: $text_2;
+    text-shadow: 0px 5px 25px rgba($accent, 0.30);
+  }
+  .question{
+    border-bottom: 1px solid $text_2;
+    padding: 2px 10px 5px 10px;
+  }
+
+  .answer{
+    padding: 5px 10px;
+  }
+}
+
+//---------------------------------------
+// Contact
+//---------------------------------------
+
+#contact{
+
+  .input-group-text{
+    background: $primary!important;;
+  }
+  i{
+    color: $text_1;
+  }
+  .form-control, .form-select{
+    background: $background;
+    border: 1px solid transparent;
+    color: $secondary;
+    box-shadow: 0px 0 20px rgba($secondary, 0.1);
+  }
+  .form-select{
+    text-align: center;
+    color: $secondary;
+    font-weight: 200;
+  }
+  ::placeholder{
+    color: $secondary;
+    font-weight: 200;
+  }
+
+
+  .form-control:focus, .form-select:focus {
+    background: $text_1;
+    border: 1px solid $accent;
+    color: $secondary;
+    box-shadow: 0 0 0 2px rgba($accent, .25);
+  }
+
+  button{
+    background-color: $primary;
+    color: $text_1;
+    box-shadow: 0px 5px 25px rgba($accent, 0.30);
+    border: none;
+    transition: .3s;
+  }
+  button:hover, button:focus, button:active, button:focus-visible{
+    background-color: $text_1;
+    box-shadow: 0px 5px 25px rgba($primary, 0.30);
+    color: $primary;
+    transition: .3s;
+  }
+
+  .gracias{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  .img-modal{
+    width: 250px;
+  }
+  .ok{
+    font-weight: 700;
+    color: $success;
+  }
+
+  .error{
+    font-weight: 700;
+    color: $danger;
+  }
+}
+
+#g-recaptcha-response {
+  display: block !important;
+  position: absolute;
+  margin: -78px 0 0 0 !important;
+  width: 302px !important;
+  height: 76px !important;
+  z-index: -999999;
+  opacity: 0;
+}
+
+
+//---------------------------------------
+// Footer
+//---------------------------------------
+
+#footer{
+  background: $secondary;
+  color: $text_2;
+  padding: 20px 0;
+
+  a{
+    color: $text_1;
+  }
+
+  a:hover{
+    color: rgba($color: $text_1, $alpha: .5 );
+  }
+  .bottom{
+    background-color: $background;
+  }
+
+  .call-end{
+    background-color: rgba($color: $accent, $alpha: .9);
+    color: $text_1;
+    border-radius: 15px;
+    border: none;
+    transition: .5s;
+    text-shadow: 0px 5px 25px rgba($accent, 0.30);
+  }
+  
+  .call-end:hover{
+    background-color: rgba($color: $accent_2, $alpha: .9);
+    transition: .5s;
+    font-size: large;
+    cursor: pointer;
+  }
+ 
+}
+
+
+.call{
+  background-color: rgba($color: $accent, $alpha: .6);
+  color: $text_1;
+  border-radius: 15px;
+  border: none;
+  padding: 1rem 3rem;
+  margin: 5px;
+  transition: .5s;
+  text-shadow: 0px 5px 25px rgba($accent, 0.30);
+}
+
+.call:hover{
+  background-color: rgba($color: $accent_2, $alpha: .9);
+  transition: .5s;
+  font-size: large;
+  cursor: pointer;
 }
