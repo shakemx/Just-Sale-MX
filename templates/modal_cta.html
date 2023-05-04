@@ -1,0 +1,103 @@
+<span id="contact" class="bg-info">
+<div class="modal fade" id="modal-cta" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content bg-transparent">
+      <div class="row gx-3">
+        <div class="col">
+          <form class="row g-3 needs-validation" id="formularioContacto">
+            <div class="col-12">
+              <div class="input-group">
+                <div class="input-group-text">
+                  <i class="fa-regular fa-user"></i>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre_contacto"
+                  placeholder="Nombre Completo"
+                  aria-label="Nombre Completo"
+                  required
+                />
+              </div>
+            </div>
+      
+            <div class="col-lg-6">
+              <div class="input-group">
+                <div class="input-group-text">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="correo_contacto"
+                  placeholder="Email"
+                  aria-label="Email"
+                  required
+                />
+              </div>
+            </div>
+      
+            <div class="col-lg-6">
+              <div class="input-group">
+                <div class="input-group-text">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefono_contacto"
+                  placeholder="Teléfono"
+                  aria-label="Teléfono"
+                  required
+                />
+              </div>
+            </div>
+      
+            <div class="col-12">
+              <select id="asunto_contacto" class="form-select" required>
+                <option value="" selected>
+                  ¿Te gustaría recibir una propuesta de compra para tu inmueble?
+                </option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <select id="medio_contacto" class="form-select" required>
+                <option value="" selected>
+                  Selecciona la ubicación de tu inmueble
+                </option>
+                <option value="Ciudad de México">Ciudad de México</option>
+                <option value="Cuautitlán Izcalli">Cuautitlán Izcalli</option>
+                <option value="Naucalpan">Naucalpan</option>
+                <option value="Tlalnepantla">Tlalnepantla</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <select id="medio_contacto" class="form-select" required>
+                <option value="" selected>¿Cómo te contactaremos?</option>
+                <option value="Correo Electrónico">Correo Electrónico</option>
+                <option value="Llamada Teléfonica">Llamada Teléfonica</option>
+                <option value="Mensaje Whatsapp">Mensaje Whatsapp</option>
+              </select>
+            </div>
+            <div class="col-12 text-center">
+              {% load env_extras %}
+              <div
+                class="g-recaptcha"
+                data-sitekey="{% get_env_var 'RECAPTCHA_SECRET_KEY' %}"
+                required
+              ></div>
+              <button type="submit" class="col-12 btn btn-primary">
+                Enviar Mensaje
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</span>

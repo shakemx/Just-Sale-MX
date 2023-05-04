@@ -17,13 +17,13 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
         </video>
         <div
-          class="container position-relative"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <h1 class="display-1">Just Sale</h1>
-          <h3>Comprámos tu casa de forma rápida, fácil y segura</h3>
-          <a href="#about" class="btn-get-started scrollto follow">Mas info...</a>
+          class="container position-relative">
+          <h1 class="display-1" data-aos="fade-right"
+          data-aos-delay="500">Just Sale</h1>
+          <h3 data-aos="fade-left"
+          data-aos-delay="1000">Comprámos tu casa de forma rápida, fácil y segura</h3>
+          <a href="#about" class="btn-get-started scrollto follow"data-aos="zoom-out"
+          data-aos-delay="1500">Mas info...</a>
         </div>
       </div>
     </span>
@@ -89,26 +89,24 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     <div class="container h-75">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="display-5">Así de Fácil</h2>
-          <h4>Son 4 sencillos pasos</h4>
+          <span class="animation-wrapper">
+            <h2 class="display-5 animation-down animation-down-start animation-down-finale">Así de Fácil</h2>
+            <h4 class="animation-up animation-up-start animation-up-finale">Son 4 sencillos pasos</h4>
+          </span>
         </div>
       </div>
       <div class="row row_process">
         <div class="col-6 col-lg-3">
-          <div class="card">
+          <div class="card">          
             <div class="box_icon p-3">
-              <img
-                src="{% static 'img/home/agenda.png'%}"
-                class="card-img-top"
-                alt="Agenda"
-              />
+              <img src="{% static 'img/home/agenda.png'%}" class="card-img-top" alt="Agenda" />
             </div>
             <div class="card-body">
               <h2 class="card-title">Agenda</h2>
               <p class="card-text">
                 Agenda una cita para conocer tu inmueble y realizar un avalúo.
               </p>
-            </div>
+            </div>          
           </div>
         </div>
         <div class="col-6 col-lg-3">
@@ -187,7 +185,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             ¿Qúe harías si recuperaras tu capital?
           </h5>
           <br>
-          <a class="call">
+          <a class="call" data-bs-toggle="modal" data-bs-target="#modal-cta">
             Saber más...
           </a>
         </div>
@@ -201,11 +199,13 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     <div class="container h-75">
       <div class="row">
         <div class="col-12 text-center">
-          <h2 class="display-5">Mundo Just Sale</h2>
-          <h4>
-            Conoce lo último en noticias e información sobre el Sector
-            Inmobiliario
-          </h4>
+          <span class="animation-wrapper-1">
+            <h2 class="display-5 animation-down1 animation-down1-start animation-down1-finale">Mundo Just Sale</h2>
+            <h4 class="animation-up1 animation-up1-start animation-up1-finale">
+              Conoce lo último en noticias e información sobre el Sector
+              Inmobiliario
+            </h4>
+          </span>
         </div>
         <br>
         <br>
@@ -256,9 +256,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row align-items-center">
         
         <div class="col col-lg-6">
-          <h2 class="display-4">Historias de Éxito</h2>
-          <h4>Te compartimos la opinón de nuestros clientes</h4>
-        </div>
+          <span class="animation-wrapper-4">
+            <h2 class="display-5 animation-right animation-right-start animation-right-finale">Historias de Éxito</h2>
+            <h4 class="animation-left animation-left-start animation-left-finale">Te compartimos la opinón de nuestros clientes</h4>
+          </span>
+          </div>
         <div class="col-lg-6 ">
           {% for testimonial in testimonials|slice:"2" %}
           <div class="col-12 mt-3">
@@ -279,15 +281,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <p class="m-0">{{ testimonial.body }}</p>
             </div>
           </div>
-          <div class="modal fade" id="modal-{{testimonial.id}}" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-              <div class="modal-content bg-transparent">
-                <div class="ratio ratio-16x9">
-                  <iframe width="560" height="315" src="{{testimonial.url_video|safe}}" title="{{testimonial.lead}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% include 'modal_testimonials.html' %}
           {% endfor %}
         </div>
         
@@ -303,7 +297,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         <div class="col my-5 text-center">
            <span class="img-action02-wrapper">
             <img
-              src="{% static 'img/home/accion_01.png'%}"
+              src="{% static 'img/home/accion_02.png'%}"
               class="img-action02 img-action02-animate img-action02-finale"
               alt="Recupera tu capital"
             />
@@ -314,7 +308,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             
           </h5>
           <br>
-          <a class="call">
+          <a class="call" data-bs-toggle="modal" data-bs-target="#modal-cta">
             Contactarme con un experto
           </a>
         </div>
@@ -325,13 +319,17 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Faqs Section ======= -->
 
   <section class="slides_full" id="faqs">
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <div class="col-12">
-          <h2 class="display-4">Preguntas Frecuentes</h2>
-          <h4>Resolvemos tus dudas</h4>
+    <div class="container h-75">
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="animation-wrapper-2">
+            <h2 class="display-5 animation-down2 animation-down2-start animation-down2-finale">Preguntas Frecuentes</h2>
+            <h4 class="animation-up2 animation-up2-start animation-up2-finale">Resolvemos tus dudas</h4>
+          </span>
         </div>
       </div>
+      <br>
+      <br>
 
       <!-- Question Container -->
       <div class="row my-3">
@@ -453,7 +451,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Contact Section ======= -->
 
   <section class="slides_full" id="contact" class="contact">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       <header class="section-header">
         <h2 class="display-4">Contacto</h2>
         <h4>Nos comunicaremos contigo en breve</h4>
@@ -641,7 +639,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       </div>
     </div>
   </section>
-
+  {% include 'modal_cta.html' %}
   {% include 'footer.html' %}
 </div>
 
@@ -651,6 +649,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   const imgabout = document.querySelector(".img-about");
   const imgaaction01 = document.querySelector(".img-action");
   const imgaaction02 = document.querySelector(".img-action02");
+
   square.classList.remove("square-animate");
   imgabout.classList.remove("img-about-animate");
   imgaaction01.classList.remove("img-action-animate");
@@ -663,6 +662,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         imgabout.classList.add("img-about-animate");
         imgaaction01.classList.add("img-action-animate");
         imgaaction02.classList.add("img-action02-animate");
+
         imgabout.classList.remove("img-about-finale");
         square.classList.remove("square-finale");
         imgaaction01.classList.remove("img-action-finale");
@@ -674,6 +674,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       imgabout.classList.remove("img-about-animate");
       imgaaction01.classList.remove("img-action-animate");
       imgaaction02.classList.remove("img-action02-animate");
+
       square.classList.add("square-finale");
       imgabout.classList.add("img-about-finale");
       imgaaction01.classList.add("img-action-finale");
@@ -734,5 +735,117 @@ if (window.matchMedia("(min-width: 768px)").matches) {
       $recaptcha.setAttribute("required", "required");
   }
 };
+</script>
+<script>
+  // Animate Div Observer
+  const animation_down = document.querySelector(".animation-down");
+  const animation_up = document.querySelector(".animation-up");
+
+  animation_down.classList.remove("animation-down-start");
+  animation_up.classList.remove("animation-up-start");
+
+  const observers = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animation_down.classList.add("animation-down-start");
+        animation_down.classList.remove("animation-down-finale");
+
+        animation_up.classList.add("animation-up-start");
+        animation_up.classList.remove("animation-up-finale");
+
+        return;
+      }
+      animation_down.classList.remove("animation-down-start");
+      animation_up.classList.remove("animation-up-start");
+
+      animation_down.classList.add("animation-down-finale");
+      animation_up.classList.add("animation-up-finale");
+    });
+  });
+  observers.observe(document.querySelector(".animation-wrapper"));
+</script>
+<script>
+  // Animate Div Observer
+  const animation_down1 = document.querySelector(".animation-down1");
+  const animation_up1 = document.querySelector(".animation-up1");
+
+  animation_down1.classList.remove("animation-down1-start");
+  animation_up1.classList.remove("animation-up1-start");
+
+  const observers1 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animation_down1.classList.add("animation-down1-start");
+        animation_down1.classList.remove("animation-down1-finale");
+
+        animation_up1.classList.add("animation-up1-start");
+        animation_up1.classList.remove("animation-up1-finale");
+
+        return;
+      }
+      animation_down1.classList.remove("animation-down1-start");
+      animation_up1.classList.remove("animation-up1-start");
+
+      animation_down1.classList.add("animation-down1-finale");
+      animation_up1.classList.add("animation-up1-finale");
+    });
+  });
+  observers1.observe(document.querySelector(".animation-wrapper-1"));
+</script>
+<script>
+  // Animate Div Observer
+  const animation_down2 = document.querySelector(".animation-down2");
+  const animation_up2 = document.querySelector(".animation-up2");
+
+  animation_down2.classList.remove("animation-down2-start");
+  animation_up2.classList.remove("animation-up2-start");
+
+  const observers2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animation_down2.classList.add("animation-down2-start");
+        animation_down2.classList.remove("animation-down2-finale");
+
+        animation_up2.classList.add("animation-up2-start");
+        animation_up2.classList.remove("animation-up2-finale");
+
+        return;
+      }
+      animation_down2.classList.remove("animation-down2-start");
+      animation_up2.classList.remove("animation-up2-start");
+
+      animation_down2.classList.add("animation-down2-finale");
+      animation_up2.classList.add("animation-up2-finale");
+    });
+  });
+  observers2.observe(document.querySelector(".animation-wrapper-2"));
+</script>
+<script>
+  // Animate Div Observer
+  const animation_right = document.querySelector(".animation-right");
+  const animation_left = document.querySelector(".animation-left");
+
+  animation_right.classList.remove("animation-right-start");
+  animation_left.classList.remove("animation-left-start");
+
+  const observers3 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animation_right.classList.add("animation-right-start");
+        animation_right.classList.remove("animation-right-finale");
+
+        animation_left.classList.add("animation-left-start");
+        animation_left.classList.remove("animation-left-finale");
+
+        return;
+      }
+      animation_right.classList.remove("animation-right-start");
+      animation_left.classList.remove("animation-left-start");
+
+      animation_right.classList.add("animation-right-finale");
+      animation_left.classList.add("animation-left-finale");
+    });
+  });
+  observers3.observe(document.querySelector(".animation-wrapper-4"));
 </script>
 {% endblock content %}

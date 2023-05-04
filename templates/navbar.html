@@ -19,16 +19,28 @@
       </button>
     </div>
   
-    <div class="collapse navbar-collapse fixed-bottom showNav  mt-3 ml-auto" id="listaNav" >
+    <div class="collapse navbar-collapse fixed-bottom showNav mt-3 ml-auto bg-nav" id="listaNav" >
       <ul class="navbar-nav container" data-bs-dismiss="collapse">
         <li class="nav-item">
-          <a class="nav-link" href="#nosotros">Nosotros</a>
+          <a class="nav-link mt-5" href="{% url 'home'  %}#index">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#servicios">Servicios</a>
+          <a class="nav-link" href="{% url 'home'  %}#about">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
+          <a class="nav-link" href="{% url 'home'  %}#process">Proceso Just</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'  %}#feed">Mundo Inmobiliario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'  %}#testimonials">Historias de Éxito</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'  %}#faqs">Preguntas Frecuentes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home'  %}#contact">Contacto</a>
         </li>
       </ul>
     </div>

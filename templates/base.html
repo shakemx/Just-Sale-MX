@@ -24,15 +24,30 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- AOS SCROLL -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Racaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
 
   </head>
   
   <body>
 
     <a id="topscroll"></a>
+    <div class="flotante">
+      <div class="div-flotante">      
+        <a
+          href="https://wa.me/5215544817387?text=Informes+JustSale+me+interesa+vender+mi+inmueble"
+          target="__blank"
+        >
+          <i class="fa-brands fa-whatsapp fa-2x m-2"></i>
+        </a>
+      </div>
+    </div>
+
+    
     
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -43,6 +58,10 @@
     <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
     <script src="{% static 'js/all.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     
     <!-- FIN TOP SCROLL -->
     {% block content %}{% endblock content %}
