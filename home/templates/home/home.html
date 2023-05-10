@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static %}
 
 <!-- SEO -->
-{% block title %} ¡Just Sale! PROXIMAMENTE {% endblock title %} 
+{% block title %} ¡Just Sale! | Compramos tu casa de forma rápida, fácil y segura  {% endblock title %} 
 {%block description %} Muy pronto llegará a México la mejor solución para vender de
 forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
@@ -20,15 +20,13 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           class="container position-relative">
           <h1 class="display-1" data-aos="fade-right"
           data-aos-delay="500">Just Sale</h1>
-          <h3 data-aos="fade-left"
-          data-aos-delay="1000">Comprámos tu casa de forma rápida, fácil y segura</h3>
-          <a href="#about" class="btn-get-started scrollto follow"data-aos="zoom-out"
-          data-aos-delay="1500">Mas info...</a>
+          <h3 data-aos="fade-left" data-aos-delay="1000">Comprámos tu casa de forma rápida, fácil y segura</h3>
+          <p class="mt-4" data-aos="fade-left" data-aos-delay="1000"><a href="#process"><span class="follow">Mas info...</span></a></p>
         </div>
       </div>
     </span>
     <span class="d-lg-none">
-      <div id="hero" class="embed-responsive embed-responsive-9by16">
+      <div id="hero" class="d-flex align-items-center embed-responsive embed-responsive-9by16">
         <video
           autoplay
           muted
@@ -67,7 +65,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               México, con el objetivo de ofrecer una solución rápida y segura a
               las personas que desean vender su casa o departamento.              
             </p>
-            <p><span class="follow">Conoce más de Just Sale...</span></p>
+            <p class="mt-4"><a href="{% url 'about'  %}"><span class="follow">Nosotros</span></a></p>
           </div>
           <div class="d-none d-lg-block col-lg-6">
             <span class="img-about-wrapper">
@@ -90,7 +88,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper">
-            <h2 class="display-5 animation-down animation-down-start animation-down-finale">Así de Fácil</h2>
+            <h2 class="display-5 animation-down animation-down-start animation-down-finale">Nuestro proceso</h2>
             <h4 class="animation-up animation-up-start animation-up-finale">Son 4 sencillos pasos</h4>
           </span>
         </div>
@@ -102,9 +100,9 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <img src="{% static 'img/home/agenda.png'%}" class="card-img-top" alt="Agenda" />
             </div>
             <div class="card-body">
-              <h2 class="card-title">Agenda</h2>
+              
               <p class="card-text">
-                Agenda una cita para conocer tu inmueble y realizar un avalúo.
+                Reserva una cita para conocer tu inmueble y realizar un avalúo.
               </p>
             </div>          
           </div>
@@ -119,9 +117,9 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               />
             </div>
             <div class="card-body">
-              <h2 class="card-title">Propuesta</h2>
+              
               <p class="card-text">
-                Recibe una propuesta de compra justa para la compra de tu
+                En solo 10* días recibe una propuesta justa para la compra de tu
                 inmueble.
               </p>
             </div>
@@ -137,7 +135,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               />
             </div>
             <div class="card-body">
-              <h2 class="card-title">Acepta</h2>
+              
               <p class="card-text">
                 Acepta la propuesta para comenzar la operación e integrar su
                 expediente.
@@ -155,7 +153,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               />
             </div>
             <div class="card-body">
-              <h2 class="card-title">Pago</h2>
+              
               <p class="card-text">
                 Realizaremos los tramites para firma ante notario y pago del
                 inmueble.
@@ -219,18 +217,20 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             {% for new in news|slice:"7" %}
             
               <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <div class="card">
-                  <div class="img-wrapper">
-                    <img
-                      src="{{ new.image_news }}"
-                      class="d-block w-100"
-                      alt="{{ new.title }}"
-                    />
+                <a href="{{new.url_news}}" target="_blank" class="scrollto ">
+                  <div class="card">
+                    <div class="img-wrapper">
+                      <img
+                        src="{{ new.image_news }}"
+                        class="d-block w-100"
+                        alt="{{ new.title }}"
+                      />
+                    </div>
+                    <div class="card-img-overlay">
+                      <h5 class="card-title m-1">{{new.title}}</h5>
+                    </div>
                   </div>
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">{{new.title}} <span><a href="{{new.url_news}}" target="_blank" class="btn-get-started scrollto follow">Leer más...</a></span></h5>
-                  </div>
-                </div>
+                </a>
               </div>
             
             {% endfor %}
@@ -246,6 +246,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <p><a href="{% url 'feed'  %}"><span class="follow">Últimas Noticias</span></a></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -257,28 +262,27 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         
         <div class="col col-lg-6">
           <span class="animation-wrapper-4">
-            <h2 class="display-5 animation-right animation-right-start animation-right-finale">Historias de Éxito</h2>
-            <h4 class="animation-left animation-left-start animation-left-finale">Te compartimos la opinón de nuestros clientes</h4>
+            <h2 class="display-5 animation-right animation-right-start animation-right-finale">Historias de exito</h2>
+            <div class="animation-left animation-left-start animation-left-finale">
+              <h4 >Te compartimos la opinón de nuestros clientes</h4>
+              <br>
+              <p ><a href="{% url 'testimonials'  %}"><span class="follow">Testimonios</span></a></p>
+            </div>
           </span>
           </div>
         <div class="col-lg-6 ">
           {% for testimonial in testimonials|slice:"2" %}
-          <div class="col-12 mt-3">
+          <div class="col-12 mt-3">          
             <div class="card-testimonial mx-auto">
-              <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
-                <img
-                src="{{ testimonial.image_testimonial }}"
-                alt="{{ testimonial.lead}}"
-                class="img-testimonial mx-1"
-                />
-                <div class="play-button-outer">
-                 <div class="play-button"></div>
-                </div>
-              </a>
-              <h5 class="m-0">{{ testimonial.lead }}</h5>
-              <div class="border-testimonial"></div>
-              <h6 class="m-0">{{ testimonial.headline }}</h6>
-              <p class="m-0">{{ testimonial.body }}</p>
+              <div class="img-wrapper">
+                <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
+                  <img src="{{ testimonial.image_testimonial }}" alt="{{ testimonial.lead}}" class="img-testimonial" />
+                </a>
+              </div>
+              <h5 class="mt-1">{{ testimonial.lead }}</h5>
+              <div class="border-testimonial p-0 m-0"></div>
+              <h6 class="mt-0 mb-0">{{ testimonial.headline }}</h6>
+              <p class="phrase">{{ testimonial.body }}</p>
             </div>
           </div>
           {% include 'modal_testimonials.html' %}
@@ -304,7 +308,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           </span>
           <h2 class="display-3">¿Sábes cuál es el valor de tu inmueble?</h2>
           <h5>
-            Recibe un avalúo de tu propiedad.
+            Recibe un avalúo de tu propiedad en 10* días.
             
           </h5>
           <br>
@@ -322,9 +326,9 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     <div class="container h-75">
       <div class="row">
         <div class="col-12 text-center">
-          <span class="animation-wrapper-2">
-            <h2 class="display-5 animation-down2 animation-down2-start animation-down2-finale">Preguntas Frecuentes</h2>
-            <h4 class="animation-up2 animation-up2-start animation-up2-finale">Resolvemos tus dudas</h4>
+          <span class="animation-wrapper-5">
+            <h2 class="display-5 animation-down3 animation-down3-start animation-down3-finale">Preguntas Frecuentes</h2>
+            <h4 class="animation-up3 animation-up3-start animation-up3-finale">Resolvemos tus dudas</h4>
           </span>
         </div>
       </div>
@@ -362,7 +366,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             aria-controls="pregunta3"
           >
             <div class="d-flex align-items-center justify-content-between">
-              <h5>¿Cómo puedo veder mi inmueble a Just Sale ?</h5>
+              <h5>¿Cómo puedo vender mi inmueble a Just Sale ?</h5>
               <i class="fa-solid fa-ellipsis"></i>
             </div>
           </a>
@@ -452,10 +456,14 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
   <section class="slides_full" id="contact" class="contact">
     <div class="container">
-      <header class="section-header">
-        <h2 class="display-4">Contacto</h2>
-        <h4>Nos comunicaremos contigo en breve</h4>
-      </header>
+      <div class="row">
+        <div class="col-12 text-center">
+          <span class="animation-wrapper-2">
+            <h2 class="display-5 animation-down2 animation-down2-start animation-down2-finale">Contacto</h2>
+            <h4 class="animation-up2 animation-up2-start animation-up2-finale">Nos comunicaremos contigo en breve</h4>
+          </span>
+        </div>
+      </div>
 
       <div class="row gx-3">
         <div class="col">
@@ -847,5 +855,33 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     });
   });
   observers3.observe(document.querySelector(".animation-wrapper-4"));
+</script>
+<script>
+  // Animate Div Observer
+  const animation_down3 = document.querySelector(".animation-down3");
+  const animation_up3 = document.querySelector(".animation-up3");
+
+  animation_down3.classList.remove("animation-down3-start");
+  animation_up3.classList.remove("animation-up3-start");
+
+  const observers4 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animation_down3.classList.add("animation-down3-start");
+        animation_down3.classList.remove("animation-down3-finale");
+
+        animation_up3.classList.add("animation-up3-start");
+        animation_up3.classList.remove("animation-up3-finale");
+
+        return;
+      }
+      animation_down3.classList.remove("animation-down3-start");
+      animation_up3.classList.remove("animation-up3-start");
+
+      animation_down3.classList.add("animation-down3-finale");
+      animation_up3.classList.add("animation-up3-finale");
+    });
+  });
+  observers4.observe(document.querySelector(".animation-wrapper-5"));
 </script>
 {% endblock content %}

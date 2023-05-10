@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% load static %}
+
+<!-- SEO -->
+{% block title %} Historias de éxito{% endblock title %} 
+{%block description %} Escucha la historia de nuestros clientes, conoce como Justa Sale ha podido cambiar la vida de todos sus clientes {% endblock description %}
+
+<!-- Body -->
+{% block content %} {% include 'navbar.html' %}
+
+<!-- ======= Header Section ======= -->
+
+<header id="testimonials-index">
+ 
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="display-5" data-aos="fade-up" data-aos-delay="500">Historias de exito</h2>
+        <h4 data-aos="fade-up" data-aos-delay="500">¿Cómo hemos cambiado la vida de nuestros clientes? </h4>
+      </div>
+    </div>
+    {% for testimonial in testimonials|slice:"2" %}
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="500">
+          <div class="img-wrapper">
+          <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
+            <img src="{{ testimonial.image_testimonial }}" alt="{{ testimonial.lead}}" class="img-testimonial">
+          </a>
+        </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+          <div class="card-body">
+            <h5 class="card-title">{{ testimonial.lead }}</h5>
+            <div class="border-testimonial p-0 m-0"></div>
+            <p class="card-text">{{ testimonial.headline }}</p>
+            <p class="card-text"><small class="text-muted">{{ testimonial.body }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    {% include 'modal_testimonials.html' %}
+    {% endfor %}
+  </div>
+</header>
+<section id="testimonials-action">
+  <div class="container-fluid my-5">
+    <div class="container">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <h2 class="display-6">Recupera tu liquidez</h2>
+          <h5>
+            ¿Tu crédito Infonavit es muy alto tus deudas siguen creciendo?
+          </h5>
+          <br>
+          <a class="call" data-bs-toggle="modal" data-bs-target="#modal-cta">
+            Contactarme con un experto
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% include 'modal_cta.html' %}
+{% include 'footer.html' %}
+
+<script src="{% static 'js/custom.js' %}"></script>
+
+{% endblock content %}

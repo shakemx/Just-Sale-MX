@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% load static %}
+
+<!-- SEO -->
+{% block title %} Mundo Just Sale{% endblock title %} 
+{%block description %} Noticias de actualidad en el mundo inmobiliario {% endblock description %}
+
+
+ <!-----AJAX-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+
+<!-- Body -->
+
+{% block content %} {% include 'navbar.html' %}
+
+<!-- ======= Header Section ======= -->
+
+<header id="feed-index">
+ 
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 text-center">
+          <h2 class="display-5" data-aos="zoom-in" data-aos-delay="500">Mundo Just Sale</h2>
+          <h4 data-aos="zoom-in" data-aos-delay="600">
+            Conoce lo último en noticias e información sobre el Sector
+            Inmobiliario
+          </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col infinite-container">
+        {% for new in numbers %}
+          <div class="figure infinite-item">
+            <a href="{{new.url_news}}" target="_blank" rel="noopener noreferrer"><img src="{{ new.image_news }}" alt="{{ new.title }}" class="img_masonry"></a>
+            <span class="figcaption"><p>{{new.title}}</p></span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container text-center">
+  <div class="pagination">
+    {% if numbers.has_next %}
+    <a class="infinite-more-link" href="?page={{ numbers.next_page_number }}">More</a>
+    {% endif %}
+  </div>
+  <div class="loading" style="display: none;">
+    Loading...
+  </div>
+</div>
+
+
+
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+
+
+<script>
+  var infinite = new Waypoint.Infinite({
+    element: $('.infinite-container')[0],
+    
+    onBeforePageLoad: function () {
+      $('.loading').show();
+      console.log('antes de cargar');
+    },
+    onAfterPageLoad: function ($items) {
+      $('.loading').hide();
+      console.log('despues de cargar');
+    }
+  });
+</script>
+
+
+{% endblock content %}
+
