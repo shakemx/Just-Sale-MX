@@ -5,8 +5,6 @@
 {%block description %} Noticias de actualidad en el mundo inmobiliario {% endblock description %}
 
 
- <!-----AJAX-->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
 
 <!-- Body -->
 
@@ -17,7 +15,6 @@
 <header id="feed-index">
  
   <div class="container">
-
     <div class="row">
       <div class="col-12 text-center">
           <h2 class="display-5" data-aos="zoom-in" data-aos-delay="500">Mundo Just Sale</h2>
@@ -28,49 +25,73 @@
       </div>
     </div>
     <div class="row">
-      <div class="col infinite-container">
-        {% for new in numbers %}
-          <div class="figure infinite-item">
-            <a href="{{new.url_news}}" target="_blank" rel="noopener noreferrer"><img src="{{ new.image_news }}" alt="{{ new.title }}" class="img_masonry"></a>
-            <span class="figcaption"><p>{{new.title}}</p></span>
+      <div class="col infinite-container" id="war">
+        {% for new in more_obj %}
+          <div class="figure infinite-item inner" data-aos="fade-up" data-aos-delay="500">
+            <a href="{{new.url_news}}" target="_blank" rel="noopener noreferrer">
+              <div class="img-wrapper">
+                <img src="{{ new.image_news }}" alt="{{ new.title }}" class="img_masonry">
+              </div>
+            </a>
+            <span class="figcaption"><p class="phrase">{{new.title}}</p></span>
           </div>
+        
         {% endfor %}
       </div>
     </div>
+    <div class="row" id="controls" data-aos="zoom-in" data-aos-delay="500">
+      
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>Página {{more_obj.number}} de {{more_obj.paginator.num_pages}}</p>
+            <span class="step-links">
+              <p>
+              {% if more_obj.has_previous %}
+                  <a href="?page=1" class="mx-2">&laquo; Primera </a>
+                  <a href="?page={{ more_obj.previous_page_number }}" class="mx-2">Anterior</a>
+              {% endif %}
+      
+              {% if more_obj.has_next %}
+                  <a href="?page={{ more_obj.next_page_number }}" class="mx-2">Siguiente</a>
+                  <a href="?page={{ more_obj.paginator.num_pages }}" class="mx-2">Última &raquo;</a>
+              {% endif %}
+              </p>
+            </span>
+         
+          </div>
+        </div>
+      
+    </div>
   </div>
 </header>
-<div class="container text-center">
-  <div class="pagination">
-    {% if numbers.has_next %}
-    <a class="infinite-more-link" href="?page={{ numbers.next_page_number }}">More</a>
-    {% endif %}
+
+
+<section id="feed-action">
+  <div class="container-fluid my-5">
+    <div class="container">
+      <div class="row ">
+        <div class="col-12 text-center">
+          <h2 class="display-6">Recupera tu liquidez</h2>
+          <h5>
+            ¿Tu crédito Infonavit es muy alto tus deudas siguen creciendo?
+          </h5>
+          <br>
+          <a class="call" data-bs-toggle="modal" data-bs-target="#modal-cta">
+            Contactarme con un experto
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="loading" style="display: none;">
-    Loading...
-  </div>
-</div>
+</section>
 
+{% include 'modal_cta.html' %}
+{% include 'footer.html' %}
 
-
-<script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-<script src="{% static 'js/infinite.min.js' %}"></script>
 
 
 <script>
-  var infinite = new Waypoint.Infinite({
-    element: $('.infinite-container')[0],
-    
-    onBeforePageLoad: function () {
-      $('.loading').show();
-      console.log('antes de cargar');
-    },
-    onAfterPageLoad: function ($items) {
-      $('.loading').hide();
-      console.log('despues de cargar');
-    }
-  });
+  AOS.init({ once: true })
 </script>
 
 

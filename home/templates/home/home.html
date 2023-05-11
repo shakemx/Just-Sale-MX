@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static %}
 
 <!-- SEO -->
-{% block title %} ¡Just Sale! | Compramos tu casa de forma rápida, fácil y segura  {% endblock title %} 
+{% block title %} ¡Just Sale! | Compramos tu casa de forma rápida, fácil y segura {% endblock title %}
 {%block description %} Muy pronto llegará a México la mejor solución para vender de
 forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
@@ -16,34 +16,24 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         <video autoplay muted loop id="myVideo">
           <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
         </video>
-        <div
-          class="container position-relative">
-          <h1 class="display-1" data-aos="fade-right"
-          data-aos-delay="500">Just Sale</h1>
+        <div class="container position-relative">
+          <h1 class="display-1" data-aos="fade-right" data-aos-delay="500">Just Sale</h1>
           <h3 data-aos="fade-left" data-aos-delay="1000">Comprámos tu casa de forma rápida, fácil y segura</h3>
-          <p class="mt-4" data-aos="fade-left" data-aos-delay="1000"><a href="#process"><span class="follow">Mas info...</span></a></p>
+          <p class="mt-4" data-aos="fade-left" data-aos-delay="1000"><a href="#process"><span class="follow">Mas
+                info...</span></a></p>
         </div>
       </div>
     </span>
     <span class="d-lg-none">
-      <div id="hero" class="d-flex align-items-center embed-responsive embed-responsive-9by16">
-        <video
-          autoplay
-          muted
-          loop
-          id="myVideo"
-          class="video embed-responsive-item"
-        >
+      <div id="hero" class="d-flex align-items-center ratio ratio-9x16">
+        <video autoplay muted loop id="myVideo">
           <source src="{% static 'img/video/just_916.mp4'%}" type="video/mp4" />
         </video>
-        <div
-          class="container position-relative"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <h1>Just Sale</h1>
-          <h2>Comprámos tu depa de forma rápida, fácil y segura</h2>
-          <a href="#about" class="btn-get-started scrollto follow">Mas info...</a>
+        <div class="container position-relative">
+          <h1 class="display-1" data-aos="fade-right" data-aos-delay="500">Just Sale</h1>
+          <h3 data-aos="fade-left" data-aos-delay="1000">Comprámos tu depa de forma rápida, fácil y segura</h3>
+          <p class="mt-4" data-aos="fade-left" data-aos-delay="1000"><a href="#process"><span class="follow">Mas
+                info...</span></a></p>
         </div>
       </div>
     </span>
@@ -63,17 +53,14 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             <p>
               Somos una empresa que se dedica a la compra de inmuebles en
               México, con el objetivo de ofrecer una solución rápida y segura a
-              las personas que desean vender su casa o departamento.              
+              las personas que desean vender su casa o departamento.
             </p>
             <p class="mt-4"><a href="{% url 'about'  %}"><span class="follow">Nosotros</span></a></p>
           </div>
           <div class="d-none d-lg-block col-lg-6">
             <span class="img-about-wrapper">
-              <img
-                src="{% static 'img/home/about.png'%}"
-                alt="Acerca de Just Sale"
-                class="img-about img-about-animate img-about-finale"
-              />
+              <img src="{% static 'img/home/about.png'%}" alt="Acerca de Just Sale"
+                class="img-about img-about-animate img-about-finale" />
             </span>
           </div>
         </div>
@@ -88,73 +75,61 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper">
-            <h2 class="display-5 animation-down animation-down-start animation-down-finale">Nuestro proceso</h2>
-            <h4 class="animation-up animation-up-start animation-up-finale">Son 4 sencillos pasos</h4>
+            <h2 class="animation-down animation-down-start animation-down-finale">Nuestro proceso</h2>
+            <h6 class="animation-up animation-up-start animation-up-finale">Son 4 sencillos pasos</h6>
           </span>
         </div>
       </div>
       <div class="row row_process">
-        <div class="col-6 col-lg-3">
-          <div class="card">          
-            <div class="box_icon p-3">
+        <div class="col-6 text-center col-lg-3">
+          <div class="card">
+            <div class="box_icon p-lg-3">
               <img src="{% static 'img/home/agenda.png'%}" class="card-img-top" alt="Agenda" />
             </div>
             <div class="card-body">
-              
-              <p class="card-text">
+              <h5 class="d-lg-none">Agenda cita</h5>
+              <p class="card-text d-none d-lg-block">
                 Reserva una cita para conocer tu inmueble y realizar un avalúo.
               </p>
-            </div>          
+            </div>
           </div>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 text-center col-lg-3">
           <div class="card">
-            <div class="box_icon p-3">
-              <img
-                src="{% static 'img/home/propuesta.png'%}"
-                class="card-img-top"
-                alt="Propuesta"
-              />
+            <div class="box_icon p-lg-3">
+              <img src="{% static 'img/home/propuesta.png'%}" class="card-img-top" alt="Propuesta" />
             </div>
             <div class="card-body">
-              
-              <p class="card-text">
+              <h5 class="d-lg-none">Recibe propuesta</h5>
+              <p class="card-text d-none d-lg-block">
                 En solo 10* días recibe una propuesta justa para la compra de tu
                 inmueble.
               </p>
             </div>
           </div>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 text-center col-lg-3">
           <div class="card">
-            <div class="box_icon p-3">
-              <img
-                src="{% static 'img/home/acepta.png'%}"
-                class="card-img-top"
-                alt="Acepta"
-              />
+            <div class="box_icon p-lg-3">
+              <img src="{% static 'img/home/acepta.png'%}" class="card-img-top" alt="Acepta" />
             </div>
             <div class="card-body">
-              
-              <p class="card-text">
+              <h5 class="d-lg-none">Just Sale</h5>
+              <p class="card-text d-none d-lg-block">
                 Acepta la propuesta para comenzar la operación e integrar su
                 expediente.
               </p>
             </div>
           </div>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 text-center col-lg-3">
           <div class="card">
-            <div class="box_icon p-3">
-              <img
-                src="{% static 'img/home/pago.png'%}"
-                class="card-img-top"
-                alt="Pago"
-              />
+            <div class="box_icon p-lg-3">
+              <img src="{% static 'img/home/pago.png'%}" class="card-img-top" alt="Pago" />
             </div>
             <div class="card-body">
-              
-              <p class="card-text">
+              <h5 class="d-lg-none">Recibe pago</h5>
+              <p class="card-text d-none d-lg-block">
                 Realizaremos los tramites para firma ante notario y pago del
                 inmueble.
               </p>
@@ -172,13 +147,10 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row align-items-center">
         <div class="col my-5 text-center">
           <span class="img-action-wrapper">
-            <img
-              src="{% static 'img/home/accion_01.png'%}"
-              class="img-action img-action-animate img-action-finale"
-              alt="Recupera tu capital"
-            />
+            <img src="{% static 'img/home/accion_01.png'%}" class="img-action img-action-animate img-action-finale"
+              alt="Recupera tu capital" />
           </span>
-          <h2 class="display-3">Invertir en mi negocio</h2>
+          <h2>Invertir en mi negocio</h2>
           <h5>
             ¿Qúe harías si recuperaras tu capital?
           </h5>
@@ -198,33 +170,25 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-1">
-            <h2 class="display-5 animation-down1 animation-down1-start animation-down1-finale">Mundo Just Sale</h2>
-            <h4 class="animation-up1 animation-up1-start animation-up1-finale">
+            <h2 class="animation-down1 animation-down1-start animation-down1-finale">Mundo Just Sale</h2>
+            <h6 class="animation-up1 animation-up1-start animation-up1-finale">
               Conoce lo último en noticias e información sobre el Sector
               Inmobiliario
-            </h4>
+            </h6>
           </span>
         </div>
         <br>
         <br>
-        <div class="row mt-3 ">
-          <div
-            id="carouselExampleControls"
-            class="carousel"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">  
-            {% for new in news|slice:"7" %}
-            
+        <div class=" mt-3 ">
+          <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {% for new in news|slice:"7" %}
+
               <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
                 <a href="{{new.url_news}}" target="_blank" class="scrollto ">
                   <div class="card">
                     <div class="img-wrapper">
-                      <img
-                        src="{{ new.image_news }}"
-                        class="d-block w-100"
-                        alt="{{ new.title }}"
-                      />
+                      <img src="{{ new.image_news }}" class="d-block w-100" alt="{{ new.title }}" />
                     </div>
                     <div class="card-img-overlay">
                       <h5 class="card-title m-1">{{new.title}}</h5>
@@ -232,14 +196,16 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
                   </div>
                 </a>
               </div>
-            
-            {% endfor %}
+
+              {% endfor %}
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
               <span class="fa fa-chevron-left fa-3x" aria-hidden="true"></span>
               <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
               <span class="fa fa-chevron-right fa-3x" aria-hidden="true"></span>
               <span class="visually-hidden">Siguiente</span>
             </button>
@@ -257,22 +223,24 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Testimonials Section ======= -->
 
   <section class="slides_full" id="testimonials">
-    <div class="container">
+    <div class="container h-75">
       <div class="row align-items-center">
-        
-        <div class="col col-lg-6">
+
+        <div class="col-12 col-lg-6 text-center text-lg-start">
           <span class="animation-wrapper-4">
-            <h2 class="display-5 animation-right animation-right-start animation-right-finale">Historias de exito</h2>
+            <h2 class="animation-right animation-right-start animation-right-finale">Historias de exito</h2>
             <div class="animation-left animation-left-start animation-left-finale">
-              <h4 >Te compartimos la opinón de nuestros clientes</h4>
+              <h6>Te compartimos la opinón de nuestros clientes</h6>
               <br>
-              <p ><a href="{% url 'testimonials'  %}"><span class="follow">Testimonios</span></a></p>
+              <p><a href="{% url 'testimonials'  %}"><span class="follow">Testimonios</span></a></p>
             </div>
           </span>
-          </div>
-        <div class="col-lg-6 ">
+        </div>
+        <!-- =======LG Section ======= -->
+
+        <div class="col-lg-6 d-none d-lg-block ">
           {% for testimonial in testimonials|slice:"2" %}
-          <div class="col-12 mt-3">          
+          <div class="col-12 mt-3">
             <div class="card-testimonial mx-auto">
               <div class="img-wrapper">
                 <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
@@ -280,7 +248,28 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
                 </a>
               </div>
               <h5 class="mt-1">{{ testimonial.lead }}</h5>
-              <div class="border-testimonial p-0 m-0"></div>
+              <div class="line-testimonial p-0 m-0"></div>
+              <h6 class="mt-2 mt-lg-0  mb-0">{{ testimonial.headline }}</h6>
+              <p class="phrase">{{ testimonial.body }}</p>
+            </div>
+          </div>
+          {% include 'modal_testimonials.html' %}
+          {% endfor %}
+        </div>
+
+        <!-- =======Mobile Section ======= -->
+
+        <div class="col-12 d-lg-none text-center">
+          {% for testimonial in testimonials|slice:"1" %}
+          <div class="col-12 mt-3">
+            <div class="card-testimonial mx-auto">
+              <div class="img-wrapper bg-info">
+                <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
+                  <img src="{{ testimonial.image_testimonial }}" alt="{{ testimonial.lead}}" class="img-testimonial" />
+                </a>
+              </div>
+              <h5 class="mt-1">{{ testimonial.lead }}</h5>
+              <div class="line-testimonial p-0 m-0"></div>
               <h6 class="mt-0 mb-0">{{ testimonial.headline }}</h6>
               <p class="phrase">{{ testimonial.body }}</p>
             </div>
@@ -288,7 +277,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           {% include 'modal_testimonials.html' %}
           {% endfor %}
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -299,17 +288,13 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     <div class="container py-5">
       <div class="row align-items-center">
         <div class="col my-5 text-center">
-           <span class="img-action02-wrapper">
-            <img
-              src="{% static 'img/home/accion_02.png'%}"
-              class="img-action02 img-action02-animate img-action02-finale"
-              alt="Recupera tu capital"
-            />
+          <span class="img-action02-wrapper">
+            <img src="{% static 'img/home/accion_02.png'%}"
+              class="img-action02 img-action02-animate img-action02-finale" alt="Recupera tu capital" />
           </span>
-          <h2 class="display-3">¿Sábes cuál es el valor de tu inmueble?</h2>
+          <h2>¿Sábes cuál es el valor de tu inmueble?</h2>
           <h5>
             Recibe un avalúo de tu propiedad en 10* días.
-            
           </h5>
           <br>
           <a class="call" data-bs-toggle="modal" data-bs-target="#modal-cta">
@@ -327,8 +312,8 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-5">
-            <h2 class="display-5 animation-down3 animation-down3-start animation-down3-finale">Preguntas Frecuentes</h2>
-            <h4 class="animation-up3 animation-up3-start animation-up3-finale">Resolvemos tus dudas</h4>
+            <h2 class="animation-down3 animation-down3-start animation-down3-finale">Preguntas Frecuentes</h2>
+            <h6 class="animation-up3 animation-up3-start animation-up3-finale">Resolvemos tus dudas</h6>
           </span>
         </div>
       </div>
@@ -336,18 +321,12 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       <br>
 
       <!-- Question Container -->
-      <div class="row my-3">
-
+      <div class="row my-3  quest-container">
         <!-- Question Col 01 -->
-        <div class="col-lg-6">        
+        <div class="col-lg-6">
           <div class="col question">
-            <a
-              href="#pregunta1"
-              data-bs-toggle="collapse"
-              role="button"
-              aria-expanded="false"
-              aria-controls="pregunta1"
-            >
+            <a href="#pregunta1" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta1">
               <div class="d-flex align-items-center justify-content-between">
                 <h5>¿Qué es Just Sale?</h5>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -356,20 +335,15 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           </div>
           <div class="col collapse answer" id="pregunta1">
             <h6>Expertos en soluciones Inmobiliarias</h6>
-          </div>          
+          </div>
           <div class="col question">
-          <a
-            href="#pregunta3"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="pregunta3"
-          >
-            <div class="d-flex align-items-center justify-content-between">
-              <h5>¿Cómo puedo vender mi inmueble a Just Sale ?</h5>
-              <i class="fa-solid fa-ellipsis"></i>
-            </div>
-          </a>
+            <a href="#pregunta3" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta3">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>¿Cómo puedo vender mi inmueble a Just Sale ?</h5>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </a>
           </div>
           <div class="col collapse question" id="pregunta3">
             <h6>Es muy fácil, te compartimos estos cuatro sencillos pasos</h6>
@@ -381,39 +355,29 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             </ol>
           </div>
           <div class="col question">
-          <a
-            href="#pregunta5"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="pregunta5"
-          >
-            <div class="d-flex align-items-center justify-content-between">
-              <h5>
-                ¿Compran inmuebles que se encuentren actualmente hipotecados?
-              </h5>
-              <i class="fa-solid fa-ellipsis"></i>
-            </div>
-          </a>
+            <a href="#pregunta5" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta5">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>
+                  ¿Compran inmuebles que se encuentren actualmente hipotecados?
+                </h5>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </a>
           </div>
           <div class="col collapse answer" id="pregunta5">
             <h6>
               Sí, compramos inmuebles que se encuentren actualmente hipotecados,
               sin embargo, el proceso de compra puede ser más largo.
             </h6>
-          </div>     
+          </div>
         </div>
 
         <!-- Question Col 02 -->
-         <div class="col-lg-6">               
+        <div class="col-lg-6">
           <div class="col question">
-            <a
-              href="#pregunta2"
-              data-bs-toggle="collapse"
-              role="button"
-              aria-expanded="false"
-              aria-controls="pregunta2"
-            >
+            <a href="#pregunta2" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta2">
               <div class="d-flex align-items-center justify-content-between">
                 <h5>¿Cuáles son los inmuebles que compra Just Sale?</h5>
                 <i class="fa-solid fa-ellipsis"></i>
@@ -424,21 +388,16 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             <h6>
               Actualmente nos encontramos en el procesos de compra únicamente de
               Casas y/o Departamentos
-              </h6>
+            </h6>
           </div>
           <div class="col question">
-          <a
-            href="#pregunta4"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="pregunta4"
-          >
-            <div class="d-flex align-items-center justify-content-between">
-              <h5>¿Cuál es la cobertura de compra en Just Sale?</h5>
-              <i class="fa-solid fa-ellipsis"></i>
-            </div>
-          </a>
+            <a href="#pregunta4" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta4">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>¿Cuál es la cobertura de compra en Just Sale?</h5>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </a>
           </div>
           <div class="col collapse answer" id="pregunta4">
             <h6>
@@ -447,25 +406,26 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               preocupes, pronto estaremos en tu ciudad.
               <span>¡Síguenos para más novedades!</span>
             </h6>
-          </div> 
-        </div>
-      </div>   
-</section>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </section>
 
   <!-- ======= Contact Section ======= -->
 
   <section class="slides_full" id="contact" class="contact">
-    <div class="container">
+    <div class="container h-75">
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-2">
-            <h2 class="display-5 animation-down2 animation-down2-start animation-down2-finale">Contacto</h2>
-            <h4 class="animation-up2 animation-up2-start animation-up2-finale">Nos comunicaremos contigo en breve</h4>
+            <h2 class="animation-down2 animation-down2-start animation-down2-finale">Contacto</h2>
+            <h6 class="animation-up2 animation-up2-start animation-up2-finale">Nos comunicaremos contigo en breve</h6>
           </span>
         </div>
       </div>
 
-      <div class="row gx-3">
+      <div class="row gx-lg-3 contact-container">
         <div class="col">
           <form class="row g-3 needs-validation" id="formularioContacto">
             <div class="col-md-12 col-lg-6">
@@ -473,46 +433,28 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
                 <div class="input-group-text">
                   <i class="fa-regular fa-user"></i>
                 </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre_contacto"
-                  placeholder="Nombre Completo"
-                  aria-label="Nombre Completo"
-                  required
-                />
+                <input type="text" class="form-control" id="nombre_contacto" placeholder="Nombre Completo"
+                  aria-label="Nombre Completo" required />
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-6 col-lg-3">
               <div class="input-group">
                 <div class="input-group-text">
                   <i class="fa-regular fa-envelope"></i>
                 </div>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="correo_contacto"
-                  placeholder="Email"
-                  aria-label="Email"
-                  required
-                />
+                <input type="email" class="form-control" id="correo_contacto" placeholder="Email" aria-label="Email"
+                  required />
               </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-6 col-lg-3">
               <div class="input-group">
                 <div class="input-group-text">
                   <i class="fa-solid fa-mobile-screen"></i>
                 </div>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telefono_contacto"
-                  placeholder="Teléfono"
-                  aria-label="Teléfono"
-                  required
-                />
+                <input type="tel" class="form-control" id="telefono_contacto" placeholder="Teléfono"
+                  aria-label="Teléfono" required />
               </div>
             </div>
 
@@ -577,21 +519,12 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               </select>
             </div>
             <div class="col-12">
-              <textarea
-                id="mensaje_contacto"
-                class="form-control"
-                rows="5"
-                placeholder="Escribe algún comentario o pregunta adicional"
-                required
-              ></textarea>
+              <textarea id="mensaje_contacto" class="form-control" rows="5"
+                placeholder="Escribe algún comentario o pregunta adicional" required></textarea>
             </div>
             <div class="col-12 text-center">
               {% load env_extras %}
-              <div
-                class="g-recaptcha"
-                data-sitekey="{% get_env_var 'RECAPTCHA_SECRET_KEY' %}"
-                required
-              ></div>
+              <div class="g-recaptcha" data-sitekey="{% get_env_var 'RECAPTCHA_SECRET_KEY' %}" required></div>
               <button type="submit" class="col-12 btn btn-primary">
                 Enviar Mensaje
               </button>
@@ -601,14 +534,8 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       </div>
     </div>
 
-    <div
-      class="modal fade"
-      id="modalGracias"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalGraciasLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modalGracias" tabindex="-1" role="dialog" aria-labelledby="modalGraciasLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -625,14 +552,8 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
       </div>
     </div>
 
-    <div
-      class="modal fade"
-      id="modalError"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalErrorLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -694,55 +615,55 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   observer.observe(document.querySelector(".img-action02-wrapper"));
 </script>
 <script>
-var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
 
-var cardWidth = $(".carousel-item").width();
+  var cardWidth = $(".carousel-item").width();
 
-var scrollPosition = 0;
+  var scrollPosition = 0;
 
-$(".carousel-control-next").on("click", function () {
-  if (scrollPosition < (carouselWidth - cardWidth * 2)) { //check if you can go any further
-    scrollPosition += cardWidth;  //update scroll position
-    $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
-  }
-});
-
-$(".carousel-control-prev").on("click", function () {
-  if (scrollPosition > 0) {
-    scrollPosition -= cardWidth;
-    $(".carousel-inner").animate(
-      { scrollLeft: scrollPosition },
-      600
-    );
-  }
-});
-
-var multipleCardCarousel = document.querySelector(
-  "#carouselExampleControls"
-);
-if (window.matchMedia("(min-width: 768px)").matches) {
-  //rest of the code
-  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-    interval: false
+  $(".carousel-control-next").on("click", function () {
+    if (scrollPosition < (carouselWidth - cardWidth * 2)) { //check if you can go any further
+      scrollPosition += cardWidth;  //update scroll position
+      $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600); //scroll left
+    }
   });
-} else {
-  $(multipleCardCarousel).addClass("slide");
-}
+
+  $(".carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $(".carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+
+  var multipleCardCarousel = document.querySelector(
+    "#carouselExampleControls"
+  );
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    //rest of the code
+    var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+      interval: false
+    });
+  } else {
+    $(multipleCardCarousel).addClass("slide");
+  }
 
 </script>
 <script>
-  window.onload = function() {
-  var $recaptcha = document.querySelector('#g-recaptcha-response');
-  // var myModalGracias = new bootstrap.Modal(
-  //   document.getElementById("modalGracias"),
-  //   {}
-  // );
-  // myModalGracias.show();
+  window.onload = function () {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+    // var myModalGracias = new bootstrap.Modal(
+    //   document.getElementById("modalGracias"),
+    //   {}
+    // );
+    // myModalGracias.show();
 
-  if($recaptcha) {
+    if ($recaptcha) {
       $recaptcha.setAttribute("required", "required");
-  }
-};
+    }
+  };
 </script>
 <script>
   // Animate Div Observer
@@ -883,5 +804,23 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     });
   });
   observers4.observe(document.querySelector(".animation-wrapper-5"));
+</script>
+<script>
+  var scrollAmount;
+  document.addEventListener('keydown', e => {
+    if (e.keyCode == 87) {
+      scrollAmount = -150
+    }
+    else if (e.keyCode == 83) {
+      scrollAmount = 150
+    }
+  });
+  document.addEventListener('keyup', e => {
+    scrollAmount = 0;
+  });
+
+  setInterval(function () {
+    window.scrollBy({ top: scrollAmount });
+  }, 10)
 </script>
 {% endblock content %}
