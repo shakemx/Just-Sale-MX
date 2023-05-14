@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from os import environ
-import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'storages',
     'debug_toolbar',
     'basemodel',
     'home',
@@ -131,11 +131,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
         BASE_DIR /'staticfiles'
     ]
-MEDIA_ROOT= BASE_DIR / 'media'
+    MEDIA_ROOT= BASE_DIR / 'media'
+
+else:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        BASE_DIR /'staticfiles'
+    ]
+    STATIC_ROOT = BASE_DIR / 'static-cdn'
+    AWS_ACCESS_KEY_ID = environ['SPACES_KEY']
+    AWS_SECRET_ACCESS_KEY = environ['SPACES_SECRET']
+    AWS_STORAGE_BUCKET_NAME = "justsale"
+    AWS_S3_REGION_NAME = 'sfo3'
+    AWS_S3_ENDPOINT_URL = 'https://shake.sfo3.cdn.digitaloceanspaces.com'
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+        'ACL': 'public-read',
+    }
+    AWS_S3_SIGNATURE_VERSION = 's3v4'
+    AWS_LOCATION = 'https://sfo3.cdn.digitaloceanspaces.com'
+    DEFAULT_FILE_STORAGE = 'justsale_project.cdn.storages.PublicMediaStorage'
+    STATICFILES_STORAGE = 'justsale_project.cdn.storages.StaticStorage'
+
+    
+
+   
+
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -143,4 +172,6 @@ MEDIA_ROOT= BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = type(str('c'), (), {'__contains__': lambda *a: True})()
+
+# Spaces Digital Ocean
 
