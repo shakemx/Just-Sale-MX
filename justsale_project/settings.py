@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'storages',
-    'debug_toolbar',
     'basemodel',
     'home',
     'promotions',
