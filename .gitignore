@@ -1,9 +1,9 @@
 *.pyc
 .idea/
-.png
+
 *.jpg
 *.jpeg
-*.mp4
+
 .env
 .ds_store
 
