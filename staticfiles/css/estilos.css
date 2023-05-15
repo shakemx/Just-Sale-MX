@@ -20,6 +20,15 @@ body {
       -ms-scroll-snap-type: y mandatory;
           scroll-snap-type: y mandatory; }
 
+.turn {
+  display: none; }
+
+@media screen and (orientation: landscape) {
+  .turn {
+    display: block; }
+
+  .slides_full, .container_full, .navbar, .flotante, .flotante-2 {
+    display: none; } }
 h1 {
   font-family: "ArticulatCF Bold"; }
 

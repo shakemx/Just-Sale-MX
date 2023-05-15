@@ -14,7 +14,7 @@ def news(request):
         search = "AMPI OR Infonavit OR cofinavit OR  gentrificacion OR interiorismo OR \"Asociación Mexicana de Profesionales Inmobiliarios\"  OR \"Green Lease Leader\" OR \"premio pritzker\" OR arquitectura OR urbanismo OR conavi OR inmobiliare.com"
         language = "es"
         country = {"mx,es"}
-        sources = {'inmobiliare.com, centrourbano.com, forbes.com, maspormas.com, merca20.com, revistaad.es, losojosdehipatia.com.es, america-retail.com, archdaily.mx, expansion.mx, elfinanciero.com.mx'}
+        sources = {'inmobiliare.com, centrourbano.com, forbes.com, maspormas.com, merca20.com, revistaad.es, losojosdehipatia.com.es, america-retail.com, archdaily.mx, expansion.mx'}
         sort_by = "relevancy"
         since = "1 day ago"
         headers = {

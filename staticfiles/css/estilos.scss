@@ -51,6 +51,8 @@ $black: #000000;
   color: $shake!important;
 }
 
+
+
 body {
   background-color: $background;
   font-family: "ArticulatCF Light";
@@ -58,6 +60,19 @@ body {
   overscroll-behavior: contain;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+}
+.turn{
+  display: none;
+}
+
+@media screen and (orientation:landscape){
+  .turn {
+    display: block;
+  }
+  .slides_full, .container_full, .navbar, .flotante, .flotante-2{
+    display: none;
+  }
+
 }
 
 h1 {

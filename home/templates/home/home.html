@@ -13,7 +13,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <header id="index" style="scroll-snap-align: start">
     <span class="d-none d-lg-block">
       <div id="hero" class="d-flex align-items-center ratio ratio-16x9">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted playsinline loop id="myVideo">
           <source src="{% static 'img/video/just_169.mp4'%}" type="video/mp4" />
         </video>
         <div class="container position-relative">
@@ -26,7 +26,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     </span>
     <span class="d-lg-none">
       <div id="hero" class="d-flex align-items-center ratio ratio-9x16">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted playsinline loop id="myVideo">
           <source src="{% static 'img/video/just_916.mp4'%}" type="video/mp4" />
         </video>
         <div class="container position-relative">
@@ -264,7 +264,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           <div class="col-12 mt-3">
             <div class="card-testimonial mx-auto">
               <div class="img-wrapper bg-info">
-                <a data-bs-toggle="modal" data-bs-target="#modal-{{testimonial.id}}">
+                <a data-bs-toggle="modal" data-bs-target="#modal-mobile-{{testimonial.id}}">
                   <img src="{{ testimonial.image_testimonial }}" alt="{{ testimonial.lead}}" class="img-testimonial" />
                 </a>
               </div>
@@ -274,7 +274,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <p class="phrase">{{ testimonial.body }}</p>
             </div>
           </div>
-          {% include 'modal_testimonials.html' %}
+          {% include 'modal_testimonials_mobile.html' %}
           {% endfor %}
         </div>
 
