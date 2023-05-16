@@ -60,7 +60,14 @@ body {
   overscroll-behavior: contain;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
 .turn{
   display: none;
 }
@@ -400,6 +407,12 @@ ul {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   flex-flow: column nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container_full::-webkit-scrollbar {
+  display: none;
 }
 
 .slides_full {
@@ -2067,4 +2080,6 @@ ul {
     padding: 2rem;
   }
 }
+
+
 

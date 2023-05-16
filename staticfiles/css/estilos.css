@@ -18,7 +18,12 @@ body {
   overflow-y: scroll;
   -webkit-scroll-snap-type: y mandatory;
       -ms-scroll-snap-type: y mandatory;
-          scroll-snap-type: y mandatory; }
+          scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none; }
+
+.body::-webkit-scrollbar {
+  display: none; }
 
 .turn {
   display: none; }
@@ -280,7 +285,12 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap; }
+          flex-flow: column nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none; }
+
+.container_full::-webkit-scrollbar {
+  display: none; }
 
 .slides_full {
   width: 100%;
