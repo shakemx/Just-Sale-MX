@@ -82,7 +82,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Process Section ======= -->
 
   <section class="slides_full" id="process">
-    <div class="container h-75">
+    <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper">
@@ -98,7 +98,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <img src="{% static 'img/home/agenda.png'%}" class="card-img-top" alt="Agenda" />
             </div>
             <div class="card-body">
-              <h5 class="d-lg-none">Cita</h5>
+              <h5 >Cita</h5>
               <p class="card-text d-none d-lg-block">
                 Reserva una cita para conocer tu inmueble y realizar un avalúo.
               </p>
@@ -111,7 +111,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <img src="{% static 'img/home/propuesta.png'%}" class="card-img-top" alt="Propuesta" />
             </div>
             <div class="card-body">
-              <h5 class="d-lg-none">Propuesta</h5>
+              <h5 >Propuesta</h5>
               <p class="card-text d-none d-lg-block">
                 En solo 10* días recibe una propuesta justa para la compra de tu
                 inmueble.
@@ -125,7 +125,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <img src="{% static 'img/home/acepta.png'%}" class="card-img-top" alt="Acepta" />
             </div>
             <div class="card-body">
-              <h5 class="d-lg-none">Acepta</h5>
+              <h5 >Acepta</h5>
               <p class="card-text d-none d-lg-block">
                 Acepta la propuesta para comenzar la operación e integrar su
                 expediente.
@@ -139,7 +139,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               <img src="{% static 'img/home/pago.png'%}" class="card-img-top" alt="Pago" />
             </div>
             <div class="card-body">
-              <h5 class="d-lg-none">Pago</h5>
+              <h5 >Pago</h5>
               <p class="card-text d-none d-lg-block">
                 Realizamos los trámites para firma ante notario y pago del
                 inmueble.
@@ -177,7 +177,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Feed Section ======= -->
 
   <section class="slides_full" id="feed">
-    <div class="container h-75">
+    <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-1">
@@ -316,7 +316,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Faqs Section ======= -->
 
   <section class="slides_full" id="faqs">
-    <div class="container h-75">
+    <div class="container ">
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-5">
@@ -423,7 +423,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
   <!-- ======= Contact Section ======= -->
 
   <section class="slides_full" id="contact" class="contact">
-    <div class="container h-75">
+    <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <span class="animation-wrapper-2">
@@ -813,21 +813,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 </script>
 <script>
   var scrollAmount;
-  document.addEventListener('keydown', e => {
-    if (e.keyCode == 87) {
-      scrollAmount = -150
-    }
-    else if (e.keyCode == 83) {
-      scrollAmount = 150
-    }
-  });
-  document.addEventListener('keyup', e => {
-    scrollAmount = 0;
-  });
+setInterval (function() {
+     window.scrollTo(0, scrollAmount);
+},10)
+console.log(document.body.scrollTop);
 
-  setInterval(function () {
-    window.scrollBy({ top: scrollAmount });
-  }, 10)
 </script>
 
 {% endblock content %}

@@ -61,6 +61,17 @@ body {
   -ms-overflow-style: none;
 }
 
+@media (min-width: 1920px) {
+  .container {
+    max-width: 80vw;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 80vw;
+  }
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -81,6 +92,8 @@ body::-webkit-scrollbar {
     display: none;
   }
 }
+
+
 
 h1 {
   font-family: "ArticulatCF Bold";
@@ -414,7 +427,7 @@ ul {
   align-items: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 //------------------------------------------------------
@@ -657,7 +670,7 @@ ul {
     border: 0px solid $accent !important;
     border-radius: 15%;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    height: 20rem;
+    min-height: 26rem;
   }
 
   .card-body {
@@ -694,7 +707,7 @@ ul {
   }
   @media only screen and (max-width: 992px) {
     .card {
-      height: 200px;
+      min-height: 200px;
     }
     .card-img-top {
       width: auto;
@@ -703,6 +716,21 @@ ul {
     }
     .card-text {
       font-size: smaller;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .card{
+        min-height: 30rem;
+    }
+  }
+  @media only screen and (min-width: 2560px) {
+    .card{
+        min-height: 45rem;
+    }
+  }
+  @media only screen and (min-width: 3840px) {
+    .card{
+        min-height: 70rem;
     }
   }
 }
@@ -795,11 +823,7 @@ ul {
     }
   }
 
-  @media (min-width: 1400px) {
-    .container {
-      max-width: 80vw;
-    }
-  }
+  
 
   span a {
     color: $accent_2 !important;
@@ -902,6 +926,21 @@ ul {
       font-size: small;
     }
   }
+  @media only screen and (min-width: 1920px) {
+    .card .img-wrapper {
+      height: 28rem;
+    }
+  }
+  @media only screen and (min-width: 2560px) {
+    .card .img-wrapper {
+      height: 35rem;
+    }
+  }
+  @media only screen and (min-width: 3840px) {
+    .card .img-wrapper {
+      height: 50rem;
+    }
+  }
 }
 
 //---------------------------------------
@@ -909,6 +948,13 @@ ul {
 //---------------------------------------
 
 #testimonials {
+  @media (min-width: 992px) {
+    .container {
+      max-width: 90vw;
+    }
+  }
+
+  
   font-size: small;
   font-family: "ArticulatCF Light";
   h5 {
@@ -935,7 +981,7 @@ ul {
   }
 
   .img-wrapper {
-    width: 18rem;
+    width: auto;
     height: 100%;
     border-radius: 15px;
   }
@@ -1871,14 +1917,6 @@ ul {
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   }
 
-  .img-wrapper {
-    width: 100%;
-    height: 15rem;
-    border-radius: 15px;
-    object-fit: cover;
-    object-position: center;
-  }
-
   .img-testimonial:hover {
     cursor: pointer;
   }
@@ -1947,6 +1985,30 @@ ul {
       color: $primary !important;
       padding: 0;
       margin: 0;
+    }
+  }
+
+  .img-wrapper {
+    width: 100%;
+    min-height: 15rem;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .img-wrapper {
+      min-height: 19rem;
+    }
+  }
+  @media only screen and (min-width: 2560px) {
+    .img-wrapper {
+      min-height: 25rem;
+    }
+  }
+  @media only screen and (min-width: 3840px) {
+    .img-wrapper {
+      min-height: 38rem;
     }
   }
 }
@@ -2023,5 +2085,104 @@ ul {
   img {
     border-radius: 15% 0 15% 0 !important;
     padding: 2rem;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    Responsive
+\*------------------------------------*/
+
+@media only screen and (min-width: 1920px) {
+  body{
+    font-size: 20px!important;
+  }
+  h2{
+    font-size: 3rem!important;
+  }
+  h3{
+    font-size: 2.5rem!important;
+  }
+  h4{
+    font-size: 2rem!important;
+  }
+  h5{
+    font-size: 1.5rem!important;
+  }
+  h6{
+    font-size: 1.2rem!important;
+  }
+  p{
+    font-size: 1.2rem!important;
+  }
+}
+
+
+@media only screen and (min-width: 2560px) {
+  body{
+    font-size: 28px!important;
+  }
+  h2{
+    font-size: 4rem!important;
+  }
+  h3{
+    font-size: 3.5rem!important;
+  }
+  h4{
+    font-size: 3rem!important;
+  }
+  h5{
+    font-size: 2.5rem!important;
+  }
+  h6{
+    font-size: 2rem!important;
+  }
+  p{
+    font-size: 2rem!important;
+  }
+  a{
+    font-size: 2rem!important;
+  }
+  .display-1{
+    font-size: 5rem!important;
+  }
+  .display-4{
+    font-size: 3rem!important;
+  }
+}
+
+@media only screen and (min-width: 3840px){
+  body{
+    font-size: 34px!important;
+  }
+  h2{
+    font-size: 5rem!important;
+  }
+  h3{
+    font-size: 4.5rem!important;
+  }
+  h4{
+    font-size: 4rem!important;
+  }
+  h5{
+    font-size: 3.5rem!important;
+  }
+  h6{
+    font-size: 3rem!important;
+  }
+  p{
+    font-size: 3rem!important;
+  }
+  a{
+    font-size: 3rem!important;
+  }
+  .display-1{
+    font-size: 7rem!important;
+  }
+  .display-4{
+    font-size: 4.5rem!important;
   }
 }
