@@ -1,5 +1,5 @@
-<span id="contact" class="bg-info">
-<div class="modal fade" id="modal-cta" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel" aria-hidden="true">
+<div class="modal fade" id="modal-cta" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel"
+  aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content bg-transparent">
       <div class="row gx-3">
@@ -10,51 +10,33 @@
                 <div class="input-group-text">
                   <i class="fa-regular fa-user"></i>
                 </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre_contacto"
-                  placeholder="Nombre Completo"
-                  aria-label="Nombre Completo"
-                  required
-                />
+                <input type="text" class="form-control" id="nombre_completo" placeholder="Nombre Completo"
+                  aria-label="Nombre Completo" required />
               </div>
             </div>
-      
+
             <div class="col-lg-6">
               <div class="input-group">
                 <div class="input-group-text">
                   <i class="fa-regular fa-envelope"></i>
                 </div>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="correo_contacto"
-                  placeholder="Email"
-                  aria-label="Email"
-                  required
-                />
+                <input type="email" class="form-control" id="correo_contacto" placeholder="Email" aria-label="Email"
+                  required />
               </div>
             </div>
-      
+
             <div class="col-lg-6">
               <div class="input-group">
                 <div class="input-group-text">
                   <i class="fa-solid fa-mobile-screen"></i>
                 </div>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telefono_contacto"
-                  placeholder="Teléfono"
-                  aria-label="Teléfono"
-                  required
-                />
+                <input type="tel" class="form-control" id="telefono_contacto" placeholder="Teléfono"
+                  aria-label="Teléfono" required />
               </div>
             </div>
-      
+
             <div class="col-12">
-              <select id="asunto_contacto" class="form-select" required>
+              <select id="propuesta" class="form-select" required>
                 <option value="" selected>
                   ¿Te gustaría recibir una propuesta de compra para tu inmueble?
                 </option>
@@ -63,7 +45,7 @@
               </select>
             </div>
             <div class="col-12">
-              <select id="gravamen" class="form-select" required>
+              <select id="ubicacion_contacto" class="form-select" required>
                 <option value="" selected>
                   Selecciona la ubicación de tu inmueble
                 </option>
@@ -82,11 +64,7 @@
             </div>
             <div class="col-12 text-center">
               {% load env_extras %}
-              <div
-                class="g-recaptcha"
-                data-sitekey="6LcyCMslAAAAAEZ9XIzx774esnbRg5w-CKDWZY_F"
-                required
-              ></div>
+              <div class="g-recaptcha" data-sitekey="6LcyCMslAAAAAEZ9XIzx774esnbRg5w-CKDWZY_F" required></div>
               <button type="submit" class="col-12 btn btn-primary">
                 Enviar Mensaje
               </button>
@@ -98,4 +76,118 @@
   </div>
 </div>
 
-</span>
+<div class="modal fade" id="modalGracias_2" tabindex="-1" role="dialog" aria-labelledby="modalGraciasLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto ok" id="modalGraciasLabel">
+          ¡Gracias!
+        </h5>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          Hemos recibido tu mensaje, nos comunicaremos contigo en breve.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalError_2" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto error" id="modalErrorLabel">
+          ¡Ha ocurrido un error!
+        </h5>
+      </div>
+      <div class="modal-body text-center">
+        <p>El mensaje no ha sido enviado, por favor intenta más tarde.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  window.onload = function () {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+    if ($recaptcha) {
+      $recaptcha.setAttribute("required", "required");
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init('user_gGHZQEDHJmDEjuOwEPoep')
+</script>
+<script>
+  "{% load env_extras %}"
+  "use strict";
+  window.addEventListener(
+    "load",
+    function () {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName("needs-validation");
+      var myModalGracias_2 = new bootstrap.Modal(
+        document.getElementById("modalGracias_2"),
+        {}
+      );
+      var myModalError_2 = new bootstrap.Modal(
+        document.getElementById("modalError_2"),
+        {}
+      );
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            event.preventDefault();
+            try {
+              var template_params = {
+                nombre_completo: document.getElementById("nombre_completo").value,
+                telefono_contacto: document.getElementById("telefono_contacto").value,
+                correo_contacto: document.getElementById("correo_contacto").value,
+                propuesta: document.getElementById("propuesta").value,
+                ubicacion_contacto: document.getElementById("ubicacion_contacto").value,
+                medio_contacto: document.getElementById("medio_contacto").value,
+                'g-recaptcha-response': "6LcyCMslAAAAALJQJn7OqFlgSHLrKcedI1QF6K9w",
+              };
+              emailjs.send(
+                "service_g8uwlxg",
+                "template_r3wfji4",
+                template_params
+              );
+              myModalGracias_2.show();
+              setTimeout(function () {
+                myModalGracias_2.hide();
+              }, 3000);
+            } catch (error) {
+              myModalError_2.show();
+              setTimeout(function () {
+                myModalError_2.hide();
+              }, 3000);
+              console.log(error);
+            }
+            nombre_completo.value = "";
+            telefono_contacto.value = "";
+            correo_contacto.value = "";
+            propuesta.value = "";
+            ubicacion_contacto.value = "";
+            medio_contacto.value = "";
+            grecaptcha.reset();
+          },
+          false
+        );
+      });
+    },
+    false
+  );
+</script>
