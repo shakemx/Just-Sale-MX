@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /shake
+Disallow: https://king-prawn-app-hsmxv.ondigitalocean.app/shake/news
+Disallow: https://king-prawn-app-hsmxv.ondigitalocean.app/admin
+
+User-agent: *
+Allow: /
+
+Sitemap: https://justsale.mx/sitemap.xml

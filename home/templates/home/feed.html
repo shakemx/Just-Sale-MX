@@ -24,6 +24,7 @@
           </h4>
       </div>
     </div>
+    {% if more_obj %}
     <div class="row">
       <div class="col infinite-container" id="war">
         {% for new in more_obj %}
@@ -39,8 +40,8 @@
         {% endfor %}
       </div>
     </div>
+
     <div class="row" id="controls" data-aos="zoom-in" data-aos-delay="500">
-      
         <div class="row">
           <div class="col-12 text-center">
             <p>Página {{more_obj.number}} de {{more_obj.paginator.num_pages}}</p>
@@ -62,6 +63,13 @@
         </div>
       
     </div>
+    {% else %}
+    <div class="row">
+      <div class="col text-center">
+        <h6 data-aos="fade-up" data-aos-delay="700">No podemos cargar las últimas noticias, por favor visita nuestro sitio mas tarde</h6>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </header>
 

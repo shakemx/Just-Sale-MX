@@ -190,6 +190,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         </div>
         <br>
         <br>
+        {% if news %}
         <div class=" mt-3 ">
           <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -222,10 +223,19 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             </button>
           </div>
         </div>
+        {% else %}
+        <div class="col-12 text-center">
+          <h4 >No podemos cargar las últimas noticias, por favor visita nuestro sitio mas tarde</h4>
+        </div>
+        {% endif %}
       </div>
       <div class="row">
         <div class="col-12 text-center">
+          {% if news %}
           <p><a href="{% url 'feed'  %}"><span class="follow">Últimas Noticias</span></a></p>
+          {% else %}
+          <p><a href="{% url 'feed'  %}"><span class="follow">Mantenimiento</span></a></p>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -242,10 +252,15 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             <div class="animation-left animation-left-start animation-left-finale">
               <h6>Te compartimos la opinón de nuestros clientes</h6>
               <br>
+              {% if testimonials %}
               <p><a href="{% url 'testimonials'  %}"><span class="follow">Testimonios</span></a></p>
+              {% else %}
+              <p><a href="{% url 'testimonials'  %}"><span class="follow">Próximamente</span></a></p>
+              {% endif %}
             </div>
           </span>
         </div>
+        {% if testimonials %}
         <!-- =======LG Section ======= -->
         {% for testimonial in testimonials|slice:"2" %}
         <div class="col-lg-4 d-none d-lg-block">
@@ -263,6 +278,8 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         </div>
         {% include 'modal_testimonials.html' %}
         {% endfor %}
+
+
 
 
         <!-- =======Mobile Section ======= -->
@@ -286,6 +303,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
           {% endfor %}
         </div>
 
+        {% else %}
+        <div class="col-lg-8 text-center">
+          <h5 >Nos encontramos preparando nuestras historias de éxito, sigue nuestras redes para conocerlas muy pronto</h5>
+        </div>
+        {% endif %}
       </div>
     </div>
   </section>

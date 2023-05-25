@@ -18,7 +18,9 @@
         <h4 data-aos="fade-up" data-aos-delay="500">¿Cómo hemos cambiado la vida de nuestros clientes? </h4>
       </div>
     </div>
-    {% for testimonial in testimonials|slice:"2" %}
+
+    {% if testimonials%}
+    {% for testimonial in testimonials%}
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="500">
@@ -41,6 +43,13 @@
     <hr>
     {% include 'modal_testimonials.html' %}
     {% endfor %}
+    {% else %}
+    <div class="row">
+      <div class="col text-center">
+        <h6 data-aos="fade-up" data-aos-delay="700">Nos encontramos preparando nuestras historias de éxito, sigue nuestras redes para conocerlas muy pronto</h6>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </header>
 <section id="testimonials-action">
