@@ -467,7 +467,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             </div>
 
             <div class="col-md-6">
-              <select id="asunto_contacto" class="form-select" required>
+              <select id="propuesta" class="form-select" required>
                 <option value="" selected>
                   ¿Te gustaría recibir una propuesta de compra para tu inmueble?
                 </option>
@@ -476,7 +476,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               </select>
             </div>
             <div class="col-md-6">
-              <select id="medio_contacto" class="form-select" required>
+              <select id="ubicacion_contacto" class="form-select" required>
                 <option value="" selected>
                   Selecciona la ubicación de tu inmueble
                 </option>
@@ -486,7 +486,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               </select>
             </div>
             <div class="col-md-6">
-              <select id="asunto_contacto" class="form-select" required>
+              <select id="gravamen" class="form-select" required>
                 <option value="" selected>
                   ¿El inmueble ya ha sido liquidado?
                 </option>
@@ -495,7 +495,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               </select>
             </div>
             <div class="col-md-6">
-              <select id="asunto_contacto" class="form-select" required>
+              <select id="metas_contacto" class="form-select" required>
                 <option value="" selected>
                   Si hoy vendieras tu inmueble ¿Qué te gustaría hacer?
                 </option>
@@ -656,20 +656,6 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
     $(multipleCardCarousel).addClass("slide");
   }
 
-</script>
-<script>
-  window.onload = function () {
-    var $recaptcha = document.querySelector('#g-recaptcha-response');
-    // var myModalGracias = new bootstrap.Modal(
-    //   document.getElementById("modalGracias"),
-    //   {}
-    // );
-    // myModalGracias.show();
-
-    if ($recaptcha) {
-      $recaptcha.setAttribute("required", "required");
-    }
-  };
 </script>
 <script>
   // Animate Div Observer

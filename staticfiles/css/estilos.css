@@ -409,11 +409,13 @@ ul {
       width: 50%; }
     from {
       width: 100%; } } }
-#index h1,
-#index h2,
-#index h3 {
-  color: #fcfcfc;
-  text-shadow: 2px 2px 4px black; }
+#index {
+  height: 99vh; }
+  #index h1,
+  #index h2,
+  #index h3 {
+    color: #fcfcfc;
+    text-shadow: 2px 2px 4px black; }
 
 #about h2 {
   color: #fcfcfc;
