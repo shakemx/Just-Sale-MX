@@ -457,7 +457,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
 
       <div class="row gx-lg-3 contact-container">
         <div class="col">
-          <form class="row g-3 needs-validation" id="formularioContacto">
+          <form class="row g-3 needs-validation contacto01" id="formularioContacto">
             <div class="col-md-12 col-lg-6">
               <div class="input-group">
                 <div class="input-group-text">
@@ -527,15 +527,11 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
                 <option value="Cubrir la educación de mis hijos">
                   Cubrir la educación de mis hijos
                 </option>
-                <option value="Cubrir la educación de mis hijos">
-                  Cubrir la educación de mis hijos
-                </option>
-                <option value="Liquidar deudas">Liquidar deudas</option>
                 <option value="Liquidar deudas">Liquidar deudas</option>
                 <option value="Cubrir gastos médicos">
                   Cubrir gastos médicos
                 </option>
-                <option value="No">No</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
             <div class="col-12">
@@ -840,14 +836,13 @@ console.log(document.body.scrollTop);
 <script type="text/javascript">
   emailjs.init('user_gGHZQEDHJmDEjuOwEPoep')
 </script>
-<script>
-  "{% load env_extras %}"
+<script type="text/javascript">
   "use strict";
   window.addEventListener(
     "load",
     function () {
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName("needs-validation");
+      var forms = document.getElementsByClassName("contacto01");
       var myModalGracias = new bootstrap.Modal(
         document.getElementById("modalGracias"),
         {}
@@ -876,8 +871,8 @@ console.log(document.body.scrollTop);
                 gravamen: document.getElementById("gravamen").value,
                 metas_contacto: document.getElementById("metas_contacto").value,
                 medio_contacto: document.getElementById("medio_contacto").value,
-                mensaje_contacto: document.getElementById("mensaje_contacto").value,
-                'g-recaptcha-response': "6LcyCMslAAAAALJQJn7OqFlgSHLrKcedI1QF6K9w",
+                mensaje_contacto: document.getElementById("mensaje_contacto").value,  
+                'g-recaptcha-response': '6LcyCMslAAAAALJQJn7OqFlgSHLrKcedI1QF6K9w'  
               };
               emailjs.send(
                 "service_g8uwlxg",

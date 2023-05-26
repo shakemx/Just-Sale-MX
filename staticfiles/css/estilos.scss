@@ -564,6 +564,10 @@ ul {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 45%);
   }
   height: 99vh;
+  @media only screen and (max-width: 992px) {
+    height: 100vh;
+  }
+
 }
 
 //---------------------------------------
@@ -661,6 +665,10 @@ ul {
 //---------------------------------------
 
 #process {
+  h5{
+    font-family: "ArticulatCF Light";
+    color: $accent;
+  }
   .row_process {
     display: flex;
     height: 100%;
@@ -709,6 +717,8 @@ ul {
   @media only screen and (max-width: 992px) {
     .card {
       min-height: 200px;
+      margin-top: 1rem;
+      color: $accent_2;
     }
     .card-img-top {
       width: auto;

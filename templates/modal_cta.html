@@ -1,16 +1,17 @@
-<div class="modal fade" id="modal-cta" tabindex="-1" role="dialog" aria-labelledby="modal-testimonioLabel"
+<span id="contact">
+<div class="modal fade" id="modal-cta" tabindex="-1" role="dialog" aria-labelledby="modal-accionLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content bg-transparent">
       <div class="row gx-3">
         <div class="col">
-          <form class="row g-3 needs-validation" id="formularioContacto">
+          <form class="row g-3 needs-validation contacto02" id="formularioContactos">
             <div class="col-12">
               <div class="input-group">
                 <div class="input-group-text">
                   <i class="fa-regular fa-user"></i>
                 </div>
-                <input type="text" class="form-control" id="nombre_completo" placeholder="Nombre Completo"
+                <input type="text" class="form-control" id="nombre_completo_02" placeholder="Nombre Completo"
                   aria-label="Nombre Completo" required />
               </div>
             </div>
@@ -20,7 +21,7 @@
                 <div class="input-group-text">
                   <i class="fa-regular fa-envelope"></i>
                 </div>
-                <input type="email" class="form-control" id="correo_contacto" placeholder="Email" aria-label="Email"
+                <input type="email" class="form-control" id="correo_contacto_02" placeholder="Email" aria-label="Email"
                   required />
               </div>
             </div>
@@ -30,13 +31,13 @@
                 <div class="input-group-text">
                   <i class="fa-solid fa-mobile-screen"></i>
                 </div>
-                <input type="tel" class="form-control" id="telefono_contacto" placeholder="Teléfono"
+                <input type="tel" class="form-control" id="telefono_contacto_02" placeholder="Teléfono"
                   aria-label="Teléfono" required />
               </div>
             </div>
 
             <div class="col-12">
-              <select id="propuesta" class="form-select" required>
+              <select id="propuesta_02" class="form-select" required>
                 <option value="" selected>
                   ¿Te gustaría recibir una propuesta de compra para tu inmueble?
                 </option>
@@ -45,7 +46,7 @@
               </select>
             </div>
             <div class="col-12">
-              <select id="ubicacion_contacto" class="form-select" required>
+              <select id="ubicacion_contacto_02" class="form-select" required>
                 <option value="" selected>
                   Selecciona la ubicación de tu inmueble
                 </option>
@@ -55,7 +56,7 @@
               </select>
             </div>
             <div class="col-12">
-              <select id="medio_contacto" class="form-select" required>
+              <select id="medio_contacto_02" class="form-select" required>
                 <option value="" selected>¿Cómo te contactaremos?</option>
                 <option value="Correo Electrónico">Correo Electrónico</option>
                 <option value="Llamada Teléfonica">Llamada Teléfonica</option>
@@ -110,6 +111,8 @@
   </div>
 </div>
 
+</span>
+
 
 
 <script>
@@ -131,13 +134,17 @@
     "load",
     function () {
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName("needs-validation");
+      var forms = document.getElementsByClassName("contacto02");
       var myModalGracias_2 = new bootstrap.Modal(
         document.getElementById("modalGracias_2"),
         {}
       );
       var myModalError_2 = new bootstrap.Modal(
         document.getElementById("modalError_2"),
+        {}
+      );
+      var myModalCta = new bootstrap.Modal(
+        document.getElementById("modal-cta"),
         {}
       );
       // Loop over them and prevent submission
@@ -152,24 +159,26 @@
             event.preventDefault();
             try {
               var template_params = {
-                nombre_completo: document.getElementById("nombre_completo").value,
-                telefono_contacto: document.getElementById("telefono_contacto").value,
-                correo_contacto: document.getElementById("correo_contacto").value,
-                propuesta: document.getElementById("propuesta").value,
-                ubicacion_contacto: document.getElementById("ubicacion_contacto").value,
-                medio_contacto: document.getElementById("medio_contacto").value,
-                'g-recaptcha-response': "6LcyCMslAAAAALJQJn7OqFlgSHLrKcedI1QF6K9w",
+                nombre_completo: document.getElementById("nombre_completo_02").value,
+                telefono_contacto: document.getElementById("telefono_contacto_02").value,
+                correo_contacto: document.getElementById("correo_contacto_02").value,
+                propuesta: document.getElementById("propuesta_02").value,
+                ubicacion_contacto: document.getElementById("ubicacion_contacto_02").value,
+                medio_contacto: document.getElementById("medio_contacto_02").value,
+                 'g-recaptcha-response': "6LcyCMslAAAAALJQJn7OqFlgSHLrKcedI1QF6K9w",
               };
               emailjs.send(
                 "service_g8uwlxg",
                 "template_r3wfji4",
                 template_params
               );
+              myModalCta.hide();
               myModalGracias_2.show();
               setTimeout(function () {
                 myModalGracias_2.hide();
               }, 3000);
             } catch (error) {
+              myModalCta.hide();
               myModalError_2.show();
               setTimeout(function () {
                 myModalError_2.hide();

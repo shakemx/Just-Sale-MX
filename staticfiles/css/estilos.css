@@ -416,6 +416,9 @@ ul {
   #index h3 {
     color: #fcfcfc;
     text-shadow: 2px 2px 4px black; }
+  @media only screen and (max-width: 992px) {
+    #index {
+      height: 100vh; } }
 
 #about h2 {
   color: #fcfcfc;
@@ -490,6 +493,9 @@ ul {
     right: -5%;
     -webkit-filter: blur(0);
             filter: blur(0); } }
+#process h5 {
+  font-family: "ArticulatCF Light";
+  color: #ae8b4b; }
 #process .row_process {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -532,7 +538,9 @@ ul {
   font-size: medium; }
 @media only screen and (max-width: 992px) {
   #process .card {
-    min-height: 200px; }
+    min-height: 200px;
+    margin-top: 1rem;
+    color: #344558; }
   #process .card-img-top {
     width: auto;
     padding: 1rem;
