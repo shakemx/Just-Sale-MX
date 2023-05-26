@@ -615,7 +615,9 @@ ul {
             filter: contrast(1.25) brightness(0.8) blur(0); } }
   @media only screen and (max-width: 992px) {
     #action_01 .img-action {
-      height: 35vh; } }
+      height: 32vh; }
+    #action_01 h2, #action_01 h5 {
+      font-size: smaller; } }
 
 @media (min-width: 992px) {
   #feed .container {
@@ -821,7 +823,9 @@ ul {
             filter: contrast(1.25) brightness(0.8) blur(0); } }
   @media only screen and (max-width: 992px) {
     #action_02 .img-action02 {
-      height: 35vh; } }
+      height: 32vh; }
+    #action_02 h2, #action_02 h5 {
+      font-size: smaller; } }
 
 #faqs a {
   color: #ae8b4b; }

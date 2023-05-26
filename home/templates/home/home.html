@@ -322,7 +322,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
             <img src="{% static 'img/home/accion_02.png'%}"
               class="img-action02 img-action02-animate img-action02-finale" alt="Recupera tu capital" />
           </span>
-          <h2>Recibe un avalúo de tu propiedad en 10* días.</h2>
+          <h2>Recibe una propuesta de compra en 10* días.</h2>
           <h5>
             ¿Sábes cuál es el valor de tu inmueble?
           </h5>
@@ -402,10 +402,41 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
               sin embargo, evitamos inmuebles que se encuentren en procesos de remate.
             </h6>
           </div>
+          <div class="col question d-lg-none">
+            <a href="#pregunta2" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta2">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>¿Cuáles son los inmuebles que compra Just Sale?</h5>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col collapse answer d-lg-none" id="pregunta2">
+            <h6>
+              Actualmente nos especializamos en la compra de casas y/o departamentos.
+            </h6>
+          </div>
+          <div class="col question d-lg-none">
+            <a href="#pregunta4" data-bs-toggle="collapse" role="button" aria-expanded="false"
+              aria-controls="pregunta4">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5>¿Cuál es la cobertura de compra en Just Sale?</h5>
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </a>
+          </div>
+          <div class="col collapse answer d-lg-none" id="pregunta4">
+            <h6>
+              Nuestros clientes se encuentran en la Ciudad de México y Estado de
+              México, si tu inmueble no se encuentra en estas zonas, no te
+              preocupes, pronto estaremos en tu ciudad.
+              <span>¡Síguenos para más novedades!</span>
+            </h6>
+          </div>
         </div>
 
         <!-- Question Col 02 -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 d-none d-lg-block">
           <div class="col question">
             <a href="#pregunta2" data-bs-toggle="collapse" role="button" aria-expanded="false"
               aria-controls="pregunta2">
@@ -455,7 +486,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
         </div>
       </div>
 
-      <div class="row gx-lg-3 contact-container">
+      <div class="row  contact-container">
         <div class="col">
           <form class="row g-3 needs-validation contacto01" id="formularioContacto">
             <div class="col-md-12 col-lg-6">

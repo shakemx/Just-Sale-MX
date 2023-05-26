@@ -818,7 +818,10 @@ ul {
 
   @media only screen and (max-width: 992px) {
     .img-action {
-      height: 35vh;
+      height: 32vh;
+    }
+    h2, h5{
+      font-size: smaller;
     }
   }
 }
@@ -1100,7 +1103,10 @@ ul {
   }
   @media only screen and (max-width: 992px) {
     .img-action02 {
-      height: 35vh;
+      height: 32vh;
+    }
+    h2, h5{
+      font-size: smaller;
     }
   }
 }
