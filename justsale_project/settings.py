@@ -137,26 +137,19 @@ if DEBUG:
         BASE_DIR /'staticfiles'
     ]
     MEDIA_ROOT= BASE_DIR / 'media'
+    STATIC_ROOT = BASE_DIR / 'assets'
 
 else:
-    STATIC_URL = '/static/'
+    STATIC_URL = 'https://%s/' %environ['AWS_BUCKET_URL']
+    STATICFILES_STORAGE = 'aws_storages.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'aws_storages.PublicMediaStorage'
+
+    AWS_STORAGE_BUCKET_NAME = environ['AWS_BUCKET_NAME']
+    AWS_ACCESS_KEY_ID = environ['AWS_S3_ACCESS_KEY_ID']
+    AWS_SECRET_ACCESS_KEY = environ['AWS_S3_SECRET_KEY']
     STATICFILES_DIRS = [
         BASE_DIR /'staticfiles'
     ]
-    STATIC_ROOT = BASE_DIR / 'static-cdn'
-    AWS_ACCESS_KEY_ID = environ['SPACES_KEY']
-    AWS_SECRET_ACCESS_KEY = environ['SPACES_SECRET']
-    AWS_STORAGE_BUCKET_NAME = "justsale"
-    AWS_S3_REGION_NAME = 'sfo3'
-    AWS_S3_ENDPOINT_URL = 'https://shake.sfo3.cdn.digitaloceanspaces.com'
-    AWS_S3_OBJECT_PARAMETERS = {
-        'CacheControl': 'max-age=86400',
-        'ACL': 'public-read',
-    }
-    AWS_S3_SIGNATURE_VERSION = 's3v4'
-    AWS_LOCATION = 'https://sfo3.cdn.digitaloceanspaces.com'
-    DEFAULT_FILE_STORAGE = 'justsale_project.cdn.storages.PublicMediaStorage'
-    STATICFILES_STORAGE = 'justsale_project.cdn.storages.StaticStorage'
 
     
 
