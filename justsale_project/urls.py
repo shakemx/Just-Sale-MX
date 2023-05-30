@@ -29,6 +29,7 @@ sitemaps = {
 
 if DEBUG:
     urlpatterns = [
+    path('__debug__/', include('debug_toolbar.urls')), 
     path('admin', admin.site.urls),
     path('', include('home.urls')),
     path('shake/',include('app_news.urls')), 

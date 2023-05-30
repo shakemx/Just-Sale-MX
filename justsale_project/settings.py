@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django.contrib.sitemaps',
+    'debug_toolbar',
     'storages',
     'basemodel',
     'home',
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'justsale_project.urls'
@@ -132,19 +134,25 @@ USE_TZ = True
 
 
 if DEBUG:
-    STATIC_URL = '/static/'
+    STATIC_URL = 'https://%s/%s/' %(environ['AWS_BUCKET_URL_DEV'], environ['AWS_FOLDER'])
+    DEFAULT_FILE_STORAGE = 'aws_storages.PublicMediaStorage'
+    STATICFILES_STORAGE = 'aws_storages.StaticStorage'
+
+    AWS_STORAGE_BUCKET_NAME = environ['AWS_BUCKET_NAME_DEV']
+    AWS_FOLDER = environ['AWS_FOLDER']
+    AWS_ACCESS_KEY_ID = environ['AWS_S3_ACCESS_KEY_ID_DEV']
+    AWS_SECRET_ACCESS_KEY = environ['AWS_S3_SECRET_KEY_DEV']
     STATICFILES_DIRS = [
         BASE_DIR /'staticfiles'
     ]
-    MEDIA_ROOT= BASE_DIR / 'media'
-    STATIC_ROOT = BASE_DIR / 'assets'
 
 else:
-    STATIC_URL = 'https://%s/' %environ['AWS_BUCKET_URL']
+    STATIC_URL = 'https://%s/%s/' %(environ['AWS_BUCKET_URL'], environ['AWS_FOLDER'])
     STATICFILES_STORAGE = 'aws_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'aws_storages.PublicMediaStorage'
 
     AWS_STORAGE_BUCKET_NAME = environ['AWS_BUCKET_NAME']
+    AWS_FOLDER = environ['AWS_FOLDER']
     AWS_ACCESS_KEY_ID = environ['AWS_S3_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = environ['AWS_S3_SECRET_KEY']
     STATICFILES_DIRS = [
