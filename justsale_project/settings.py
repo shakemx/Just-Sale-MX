@@ -29,7 +29,7 @@ DEBUG = True if environ['DEBUG'] == 'True' else False
 
 ALLOWED_HOSTS = [environ['HOST'], ]
 
-CSRF_TRUSTED_ORIGINS = [environ['HOST'], ]
+CSRF_TRUSTED_ORIGINS = [environ['CSRF_ORIGINS'], ]
 
 
 # Application definition
