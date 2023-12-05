@@ -150,6 +150,7 @@ if DEBUG:
 
 else:
     STATIC_URL = 'https://%s/%s/' %(environ['AWS_BUCKET_URL'], environ['AWS_FOLDER'])
+    MEDIA_URL = 'https://%s/%s/' %(environ['AWS_BUCKET_URL'], environ['AWS_FOLDER']) + 'media/'
     STATICFILES_STORAGE = 'aws_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'aws_storages.PublicMediaStorage'
 

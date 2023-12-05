@@ -32,7 +32,7 @@
           <div class="figure infinite-item inner" data-aos="fade-up" data-aos-delay="500">
             <a href="{{new.url_news}}" target="_blank" rel="noopener noreferrer">
               <div class="img-wrapper">
-                <img src="{{ new.image_news }}" alt="{{ new.title }}" class="img_masonry">
+                <img src="{{MEDIA_URL}}{{ new.image_news }}" alt="{{ new.title }}" class="img_masonry">
               </div>
             </a>
             <span class="figcaption"><p class="phrase">{{new.title}}</p></span>

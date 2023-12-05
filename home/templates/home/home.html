@@ -200,7 +200,7 @@ forma segura, rápida y sin problemas tu casa. {% endblock description %}
                 <a href="{{new.url_news}}" target="_blank" class="scrollto ">
                   <div class="card">
                     <div class="img-wrapper">
-                      <img src="{{ new.image_news }}" class="d-block w-100" alt="{{ new.title }}" />
+                      <img src="{{MEDIA_URL}}{{ new.image_news }}" class="d-block w-100" alt="{{ new.title }}" />
                     </div>
                     <div class="card-img-overlay">
                       <h5 class="card-title m-1">{{new.title}}</h5>

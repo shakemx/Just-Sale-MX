@@ -10,7 +10,7 @@ import requests
 def news(request):
     if request.method == 'GET':
         all_news = {}
-        url = "https://api.newscatcherapi.com/v2/search"
+        url = "https://v3-api.newscatcherapi.com/api/search"
         search = "AMPI OR Infonavit OR cofinavit OR  gentrificacion OR interiorismo OR \"Asociación Mexicana de Profesionales Inmobiliarios\"  OR \"Green Lease Leader\" OR \"premio pritzker\" OR arquitectura OR urbanismo OR conavi OR inmobiliare.com"
         language = "es"
         country = {"mx,es"}

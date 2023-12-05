@@ -34,7 +34,7 @@ if DEBUG:
     path('', include('home.urls')),
     path('shake/',include('app_news.urls')), 
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
         
 else:
     urlpatterns = [
